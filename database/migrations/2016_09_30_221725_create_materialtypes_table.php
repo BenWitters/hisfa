@@ -16,7 +16,7 @@ class CreateMaterialtypesTable extends Migration
         Schema::create('materialtypes', function (Blueprint $table) {
             $table->increments('material_type_id');
             $table->string('material_type_name');
-            $table->string('material_type_picture');
+            $table->string('material_type_picture')->nullable();
             $table->timestamps();
         });
     }
