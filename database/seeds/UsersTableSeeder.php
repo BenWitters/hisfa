@@ -15,13 +15,16 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'admin',
                 'email' => 'admin@hisfa.be',
-                'password' => 'admin',
+                'password' => bcrypt('admin'),
+                'profile_picture' => 'img/default/default-user-avatar.jpg',
                 'is_admin' => true
+
             ],
             [
                 'name' => 'tom',
                 'email' => 'tom@hisfa.be',
-                'password' => 'tom',
+                'password' => bcrypt('tom'),
+                'profile_picture' => 'img/default/default-user-avatar.jpg',
                 'is_admin' => true
             ]
 
