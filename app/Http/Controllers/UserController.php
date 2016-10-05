@@ -17,10 +17,18 @@ class UserController extends Controller
     public function updatePassword(Request $request){
         $user = Auth::user();
         $newPassword = $request->input('password');
-        $user->password = bcrypt($newPassword);
-        $user->save();
+        if(empty($newPassword)){
+            $feedback = "error";
+            $message = "Nieuw wachtwoord kan niet leeg zijn.";
+        }else{
+            $feedback = "success";
+            $message = "Uw wachtwoord is gewijzigd";
+            $user->password = bcrypt($newPassword);
+            $user->save();
+        }
 
-        return redirect('/account')->with('message', 'Password successfully changed.');
+
+        return redirect('/account')->with($feedback, $message);
 
     }
 }

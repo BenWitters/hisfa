@@ -5,9 +5,7 @@
     <form class="form-horizontal" method="POST" action="/account/updatePassword">
         {{ csrf_field() }}
 
-        @if( session('message') )
-        <div class="alert-success">{{ session('message') }}</div>
-        @endif
+
         <fieldset>
 
             <!-- Text input-->
@@ -25,7 +23,11 @@
                     <button id="btnsave" name="btnsave" class="btn btn-primary">Change password</button>
                 </div>
             </div>
-
+            @if( session('success') )
+                <div class="alert-success">{{ session('success') }}</div>
+            @elseif(session('error'))
+                <div class="alert-danger">{{ session('error') }}</div>
+            @endif
         </fieldset>
     </form>
 
