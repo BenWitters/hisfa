@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/account', "UserController@index");
+Route::post('/account/updatePassword', "UserController@updatePassword");
