@@ -12,10 +12,29 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return view('dashboard/dashboard');
 });
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/account', "UserController@index");
+
+Route::get('/silos', function () {
+    return view('silos/silos');
+});
+
+Route::get('/blocks', function () {
+    return view('blocks/blocks');
+});
+
+Route::get('/users/manage', function () {
+    return view('users/list');
+});
+
+Route::get('/users/add', function () {
+    return view('users/add');
+});
+
