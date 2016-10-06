@@ -71,7 +71,7 @@
                     <div class="col-md-4">
                         <div class="checkbox">
                             <label for="checkboxes-0">
-                                <input type="checkbox" checked name="get_notifications" value="checked">
+                                <input type="checkbox" <?php echo $userData['get_notifications'] == 1 ? 'checked' : ''?>  name="get_notifications" value="checked">
                                 Ontvang Meldingen
                             </label>
                         </div>
@@ -88,6 +88,5 @@
 
             </fieldset>
         </form>
-
 
 @endsection

@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
     public function index(){
-        return view('user/account');
+        $user = Auth::user(); // select * from students
+        // meegeven aan view
+        $userData['userData'] = $user;
+        return view('user/account')->with($userData);
     }
 
     // change password
