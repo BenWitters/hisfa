@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index');
 Route::get('/account', "UserController@index");
 Route::post('/account/updatePassword', "UserController@updatePassword");
 Route::post('/account/updateProfilePicture', "UserController@changeProfilePicture");
+Route::post('/account/updateNotificationSettings', 'UserController@updateNotificationSettings');

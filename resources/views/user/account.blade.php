@@ -57,4 +57,37 @@
 
         </fieldset>
     </form>
+
+
+    <!-- set notification -->
+        <form class="form-horizontal" method="POST" action="/account/updateNotificationSettings" enctype="multipart/form-data">
+            {{ csrf_field() }}
+
+            <fieldset>
+
+                <!-- Multiple Checkboxes -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes"></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="checkboxes-0">
+                                <input type="checkbox" checked name="get_notifications" value="checked">
+                                Ontvang Meldingen
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="singlebutton"></label>
+                    <div class="col-md-4">
+                        <button class="btn btn-primary">Bewaar notificatie instellingen</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+
+
 @endsection

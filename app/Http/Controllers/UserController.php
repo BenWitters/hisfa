@@ -83,4 +83,22 @@ class UserController extends Controller
         return redirect('/account')->with($feedback, $message);
 
     }
+
+    public function updateNotificationSettings(Request $request){
+
+        $user = Auth::user();
+        $value = $request->input('get_notifications');
+        if($value == "checked"){
+            $user->get_notifications = true;
+            $feedback = "success";
+            $message = "U ontvang nu notificaties.";
+        }else{
+            $user->get_notifications = false;
+            $feedback = "success";
+            $message = "U ontvang geen notificaties meer.";
+        }
+        $user->save();
+        return redirect('/account')->with($feedback, $message);
+
+    }
 }
