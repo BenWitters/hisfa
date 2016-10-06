@@ -90,17 +90,32 @@ class UserController extends Controller
     public function updateNotificationSettings(Request $request){
 
         $user = Auth::user();
-        $value = $request->input('get_notifications');
-        if($value == "checked"){
-            $user->get_notifications = true;
+        $valuePrime = $request->input('get_notifications_prime');
+
+        if($valuePrime == "checkPrime"){
+            $user->get_notifications_prime = true;
             $feedback = "success";
-            $message = "U ontvang nu notificaties.";
+            $message = "Uw notificatie settings zijn aangepast.";
         }else{
-            $user->get_notifications = false;
+            $user->get_notifications_prime = false;
             $feedback = "success";
-            $message = "U ontvang geen notificaties meer.";
+            $message = "Uw notificatie settings zijn aangepast.";
         }
         $user->save();
+
+        $valueWaste = $request->input('get_notifications_waste');
+        if($valueWaste == "checkWaste"){
+            $user->get_notifications_waste = true;
+            $feedback = "success";
+            $message = "Uw notificatie settings zijn aangepast.";
+
+        }else{
+            $user->get_notifications_waste = false;
+            $feedback = "success";
+            $message = "Uw notificatie settings zijn aangepast.";
+        }
+        $user->save();
+
         return redirect('/account')->with($feedback, $message);
 
     }

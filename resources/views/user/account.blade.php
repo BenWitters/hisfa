@@ -71,8 +71,20 @@
                     <div class="col-md-4">
                         <div class="checkbox">
                             <label for="checkboxes-0">
-                                <input type="checkbox" <?php echo $userData['get_notifications'] == 1 ? 'checked' : ''?>  name="get_notifications" value="checked">
-                                Ontvang Meldingen
+                                <input type="checkbox" <?php echo $userData['get_notifications_prime'] == 1 ? 'checked' : ''?>  name="get_notifications_prime" value="checkPrime">
+                                Ontvang Prime silo meldingen
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="checkboxes"></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="checkboxes-0">
+                                <input type="checkbox" <?php echo $userData['get_notifications_waste'] == 1 ? 'checked' : ''?>  name="get_notifications_waste" value="checkWaste">
+                                Ontvang waste silo meldingen
                             </label>
                         </div>
                     </div>
