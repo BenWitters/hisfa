@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 Route::get('/account', "UserController@index");
 
 Route::get('/silos', function () {
@@ -38,3 +38,6 @@ Route::get('/users/add', function () {
     return view('users/add');
 });
 
+Route::post('/account/updatePassword', "UserController@updatePassword");
+Route::post('/account/updateProfilePicture', "UserController@changeProfilePicture");
+Route::post('/account/updateNotificationSettings', 'UserController@updateNotificationSettings');

@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string("profile_picture")->nullable();
             $table->boolean("is_admin")->nullable();
+            $table->boolean("get_notifications")->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
