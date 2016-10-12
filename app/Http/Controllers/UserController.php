@@ -14,41 +14,41 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+    // account page
     public function index(){
-        $user = Auth::user(); // select * from students
+        // get the current user
+        $user = Auth::user();
         // meegeven aan view
         $userData['userData'] = $user;
         return view('user/account')->with($userData);
     }
 
     // change password
-
     public function updatePassword(Request $request){
-
         $user = Auth::user();
+        // get password input value
         $newPassword = $request->input('password');
+
+        // error validation if the password field is empty and the html validation doesn't work
         if(empty($newPassword)){
             $feedback = "error";
             $message = "Nieuw wachtwoord kan niet leeg zijn.";
         }else{
             $feedback = "success";
             $message = "Uw wachtwoord is gewijzigd";
+            // change password of the logged in user
             $user->password = bcrypt($newPassword);
+            //update user data in database
             $user->save();
-
-
         }
-
-
         return redirect('/account')->with($feedback, $message);
 
     }
 
     // change profile picture
+    public function changeProfilePicture(Request $request){
 
-    public function changeProfilePicture(Request $request)
-    {
-
+        //rules
         $pictureSelected = array(
             'profile_picture' => 'required',
         );
@@ -58,14 +58,16 @@ class UserController extends Controller
             'profile_picture' => 'mimes:jpeg,jpg,png',
         );
         
-
+        // if the user hasn't selected a photo
         if ($requiredValidation->fails()) {
             $feedback = "error";
             $message = "Geen foto geselecteerd";
         } else
         if ($request->hasFile('profile_picture')) {
+            // get the file that was selected
             $newProfilePic = $request->file('profile_picture');
 
+            // check if the file is an image
             $imageValidation = Validator::make($request->all(), $validPicture);
 
             if($imageValidation->fails()) {
@@ -73,8 +75,13 @@ class UserController extends Controller
                 $message = "Het geselecteerde bestand is geen geldige foto.";
             } else {
                 $user = Auth::user();
+                // create unique name for new image
                 $filename = time() . '.' . $newProfilePic->getClientOriginalExtension();
+
+                // save the image to folder
                 Image::make($newProfilePic)->save(base_path('public/img/profilePictures/' . $filename));
+
+                // save the image to the database
                 $user->profile_picture = $filename;
                 $user->save();
                 $feedback = "success";
@@ -87,11 +94,13 @@ class UserController extends Controller
 
     }
 
+    // update notification settings from waste and prime silos
     public function updateNotificationSettings(Request $request){
 
         $user = Auth::user();
         $valuePrime = $request->input('get_notifications_prime');
 
+        // check if prime notification checkbox is checked or not
         if($valuePrime == "checkPrime"){
             $user->get_notifications_prime = true;
             $feedback = "success";
@@ -103,6 +112,7 @@ class UserController extends Controller
         }
         $user->save();
 
+        // check if prime notification is checked or not
         $valueWaste = $request->input('get_notifications_waste');
         if($valueWaste == "checkWaste"){
             $user->get_notifications_waste = true;
