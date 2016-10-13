@@ -14,7 +14,7 @@ class CreateBlocktypesTable extends Migration
     public function up()
     {
         Schema::create('blocktypes', function (Blueprint $table) {
-            $table->increments('block_type_id');
+            $table->increments('id');
             $table->string('block_type_name');
             $table->timestamps();
         });

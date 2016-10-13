@@ -26,11 +26,21 @@ Route::get('/silos', function () {
     return view('silos/silos');
 });
 
+<<<<<<< HEAD
 Route::get('/waste', "WasteController@index");
+=======
+>>>>>>> Kevin
 
 Route::get('/blocks', function () {
     return view('blocks/blocks');
 });
+
+//Route::get('/blocktypes', "BlockTypeController@index");
+//Route::get('/blocktypes/create', "BlockTypeController@create");
+//Route::post('/blocktypes', 'BlockTypeController@store');
+//Route::get('/blocktypes', "BlockTypeController@index");
+Route::resource('blocktypes', 'BlockTypeController');
+
 
 Route::get('/users/manage', function () {
     return view('users/list');

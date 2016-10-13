@@ -17,7 +17,7 @@ class CreateMaterialsTable extends Migration
             $table->increments('material_id');
             $table->integer('amount');
             $table->integer('material_type_id')->unsigned()->index();
-            $table->foreign('material_type_id')->references('material_type_id')->on('materialtypes');
+            $table->foreign('material_type_id')->references('id')->on('materialtypes');
             $table->timestamps();
         });
     }
