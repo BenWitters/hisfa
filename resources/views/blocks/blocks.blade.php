@@ -8,6 +8,8 @@
 
 @section('content')
     <h2>Blocks</h2>
+
+
 @endsection
 
 

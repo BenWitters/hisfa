@@ -18,7 +18,7 @@ class CreateBlocksTable extends Migration
             $table->integer('length');
             $table->integer('amount');
             $table->integer('block_type_id')->unsigned()->index();
-            $table->foreign('block_type_id')->references('block_type_id')->on('blocktypes');
+            $table->foreign('block_type_id')->references('id')->on('blocktypes');
             $table->timestamps();
         });
     }

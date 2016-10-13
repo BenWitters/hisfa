@@ -1,4 +1,4 @@
-@extends('layouts/hisfa');
+@extends('layouts/hisfa')
 
 @section('header')
 
