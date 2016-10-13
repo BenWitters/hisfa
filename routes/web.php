@@ -26,10 +26,7 @@ Route::get('/silos', function () {
     return view('silos/silos');
 });
 
-<<<<<<< HEAD
 Route::get('/waste', "WasteController@index");
-=======
->>>>>>> Kevin
 
 Route::get('/blocks', function () {
     return view('blocks/blocks');
