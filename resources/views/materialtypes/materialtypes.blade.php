@@ -1,6 +1,5 @@
-<html>
 <head>
-    <title>Waste silo</title>
+    <title>Materialtypes</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -8,15 +7,15 @@
 
     <nav class="navbar navbar-inverse">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ URL::to('waste') }}">Waste</a>
+            <a class="navbar-brand" href="{{ URL::to('materialtypes') }}">Materialtypes</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="{{ URL::to('waste') }}">View All The Waste Silos</a></li>
-            <li><a href="{{ URL::to('waste/create') }}">Create a Waste Silo</a>
+            <li><a href="{{ URL::to('materialtypes') }}">View All The Materialtypes</a></li>
+            <li><a href="{{ URL::to('materialtypes/create') }}">Create a Materialtype</a>
         </ul>
     </nav>
 
-    <h1>All the Waste Silos</h1>
+    <h1>All the Materialtypes</h1>
 
     <!-- will be used to show any messages -->
     @if (Session::has('message'))
@@ -27,28 +26,28 @@
         <thead>
         <tr>
             <td>ID</td>
-            <td>Waste Silo</td>
+            <td>materialTypes</td>
         </tr>
         </thead>
         <tbody>
-        @foreach($waste as $key => $value)
+        @foreach($materialtypes as $key => $value)
             <tr>
                 <td>{{ $value->id }}</td>
-                <td>{{ $value->waste_silo_number }}</td>
+                <td>{{ $value->material_type_name }}</td>
 
 
                 <td>
                     <!-- show  -->
-                    <a class="btn btn-small btn-success" href="{{ URL::to('waste/' . $value->id) }}">Show this Waste Silo</a>
+                    <a class="btn btn-small btn-success" href="{{ URL::to('materialtypes/' . $value->id) }}">Show this Materialtype</a>
 
                     <!-- edit -->
-                    <a class="btn btn-small btn-info" href="{{ URL::to('waste/' . $value->id . '/edit') }}">Edit this Waste Silo</a>
+                    <a class="btn btn-small btn-info" href="{{ URL::to('materialtypes/' . $value->id . '/edit') }}">Edit this Materialtype</a>
 
                     <!-- delete -->
                     {{--<a class="btn btn-small btn-danger" href="{{ URL::to('blocktypes/' . $value->id . '/delete') }}">Delete this Blocktype</a>--}}
-                    {!! Form::open(array('url' => 'waste/' . $value->id, 'class' => 'pull-right')) !!}
+                    {!! Form::open(array('url' => 'materialtypes/' . $value->id, 'class' => 'pull-right')) !!}
                     {!! Form::hidden('_method', 'DELETE') !!}
-                    {!! Form::submit('Delete this Waste Silo', array('class' => 'btn btn-warning')) !!}
+                    {!! Form::submit('Delete this Materialtype', array('class' => 'btn btn-warning')) !!}
                     {!! Form::close() !!}
 
 
@@ -61,11 +60,3 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-{{--@foreach($wasteData as $wasteSilo)--}}
-{{--<p>Silo {{ $wasteSilo->waste_silo_number }} is voor {{ $wasteSilo->waste_full_percentage }}% gevuld met {{ $wasteSilo->blocktype->block_type_name }}</p>--}}
-{{--@endforeach--}}

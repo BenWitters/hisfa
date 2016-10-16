@@ -26,7 +26,6 @@ Route::get('/silos', function () {
     return view('silos/silos');
 });
 
-Route::get('/waste', "WasteController@index");
 
 Route::get('/blocks', function () {
     return view('blocks/blocks');
@@ -37,6 +36,10 @@ Route::get('/blocks', function () {
 //Route::post('/blocktypes', 'BlockTypeController@store');
 //Route::get('/blocktypes', "BlockTypeController@index");
 Route::resource('blocktypes', 'BlockTypeController');
+
+Route::resource('materialtypes', 'MaterialTypeController');
+
+Route::resource('waste', 'WasteController');
 
 
 Route::get('/users/manage', function () {

@@ -2,16 +2,76 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Waste;
+use Request;
+use Input;
 
 use App\Http\Requests;
 
 class WasteController extends Controller
 {
-    public function index(){
-        $allWaste = \App\Waste::all(); // select * from wastesilos
-        $wasteData['wasteData'] = $allWaste;
+//    public function index(){
+//        $allWaste = \App\Waste::all(); // select * from wastesilos
+//        $wasteData['wasteData'] = $allWaste;
+//
+//        return view('waste/waste')->with($wasteData);
+//    }
+    public function index()
+    {
+        // get all the types
+        $waste = Waste::all();
 
-        return view('waste/waste')->with($wasteData);
+        // load the view and pass the types
+        return View('waste.waste')
+            ->with('waste', $waste);
+    }
+
+
+    public function create()
+    {
+        return View('waste.create');
+    }
+
+
+    public function store(Requests\CreateWaste $request)
+    {
+        Waste::create($request->all());
+
+        return redirect('waste');
+    }
+
+    public function show($id)
+    {
+        $waste = Waste::find($id);
+
+        return View('waste.show')
+            ->with('waste', $waste);
+    }
+
+    public function edit($id)
+    {
+        $waste = Waste::find($id);
+
+        return View('waste.edit')
+            ->with('waste', $waste);
+    }
+
+
+    public function update($id)
+    {
+        // store
+        $waste = Waste::find($id);
+        $waste->waste_silo_number      = Request::get('waste_silo_number');
+        $waste->save();
+        return Redirect('waste');
+    }
+
+    public function destroy($id)
+    {
+        $waste = Waste::find($id);
+        $waste->delete();
+
+        // redirect
+        return Redirect ('waste');
     }
 }
