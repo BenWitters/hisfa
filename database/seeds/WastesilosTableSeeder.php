@@ -14,15 +14,18 @@ class WastesilosTableSeeder extends Seeder
         $wastesilos = [
             [
                 'waste_silo_number' => 1,
-                'waste_full_percentage' => 0
+                'waste_full_percentage' => 83,
+                'block_type_id' => 1
             ],
             [
                 'waste_silo_number' => 2,
-                'waste_full_percentage' => 0
+                'waste_full_percentage' => 55,
+                'block_type_id' => 3
             ],
             [
                 'waste_silo_number' => 3,
-                'waste_full_percentage' => 0
+                'waste_full_percentage' => 27,
+                'block_type_id' => 5
             ]
 
         ];
