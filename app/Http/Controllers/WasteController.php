@@ -9,9 +9,14 @@ use App\Http\Requests;
 class WasteController extends Controller
 {
     public function index(){
-        $allWaste = \App\Waste::all(); // select * from wastesilos
-        $wasteData['wasteData'] = $allWaste;
+        $waste = \App\Waste::all(); // select * from wastesilos
+        $data['allWaste'] = $waste;
+        return view('home', $data);
+    }
 
-        return view('waste/waste')->with($wasteData);
+    public function wasteSilos($id){
+        $waste = \App\Waste::with('blocktype')->findOrFail($id);
+        $data['waste'] = $waste;
+        return View('.home', $data);
     }
 }
