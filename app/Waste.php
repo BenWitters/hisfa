@@ -11,6 +11,6 @@ class Waste extends Model
 
     public function blocktype()
     {
-        return $this->hasOne('App\Blocktype', 'block_type_id', 'block_type_id');
+        return $this->hasOne('App\Blocktype', 'id', 'block_type_id');
     }
 }
