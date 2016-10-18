@@ -14,7 +14,7 @@ class CreatePrimesilosTable extends Migration
     public function up()
     {
         Schema::create('primesilos', function (Blueprint $table) {
-            $table->increments('prime_silo_id');
+            $table->increments('id');
             $table->integer('prime_silo_number');
             $table->integer('prime_full_percentage');
             $table->integer('material_id')->unsigned()->index()->nullable();
