@@ -10,7 +10,6 @@ use App\Http\Requests;
 
 class WasteController extends Controller
 {
-<<<<<<< HEAD
 //    public function index(){
 //        $allWaste = \App\Waste::all(); // select * from wastesilos
 //        $wasteData['wasteData'] = $allWaste;
@@ -69,22 +68,22 @@ class WasteController extends Controller
 
     public function destroy($id)
     {
-        $waste = Waste::find($id);
-        $waste->delete();
+            $waste = Waste::find($id);
+            $waste->delete();
 
-        // redirect
-        return Redirect ('waste');
-=======
-    public function index(){
-        $waste = \App\Waste::all(); // select * from wastesilos
-        $data['allWaste'] = $waste;
-        return view('home', $data);
+            // redirect
+            return Redirect('waste');
     }
+
+//    public function index(){
+//        $waste = \App\Waste::all(); // select * from wastesilos
+//        $data['allWaste'] = $waste;
+//        return view('home', $data);
+//    }
 
     public function wasteSilos($id){
         $waste = \App\Waste::with('blocktype')->findOrFail($id);
         $data['waste'] = $waste;
         return View('.home', $data);
->>>>>>> origin/kimberly
     }
 }
