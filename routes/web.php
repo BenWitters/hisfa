@@ -22,9 +22,7 @@ Auth::routes();
 Route::get('/', 'WasteController@index');
 Route::get('/account', "UserController@index");
 
-Route::get('/silos', function () {
-    return view('silos/silos');
-});
+Route::get('/silos', "PrimesiloController@index");
 
 
 Route::get('/blocks', function () {
