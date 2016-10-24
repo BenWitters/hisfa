@@ -23,7 +23,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/account', "UserController@index");
 Route::get('/waste', "WasteController@index");
 Route::get('/silos', "PrimesiloController@index");
-
+Route::delete('/silos/{id}', "PrimesiloController@delete");
 
 Route::get('/blocks', function () {
     return view('blocks/blocks');
