@@ -19,9 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', 'WasteController@index');
+Route::get('/', 'HomeController@index');
 Route::get('/account', "UserController@index");
-
+Route::get('/waste', "WasteController@index");
 Route::get('/silos', "PrimesiloController@index");
 
 
