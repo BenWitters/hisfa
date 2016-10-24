@@ -9,7 +9,14 @@
 
                     <div class="panel-body">
                         @foreach($primesilosData as $primeSilo)
-                            <p>Silo {{ $primeSilo->prime_silo_number }} is voor {{ $primeSilo->prime_full_percentage }}% gevuld met {{ $primeSilo->material->materialtype->material_type_name }}</p>
+                            <div>
+                                <p>Silo {{ $primeSilo->prime_silo_number }} is voor {{ $primeSilo->prime_full_percentage }}% gevuld met {{ $primeSilo->material->materialtype->material_type_name }}</p>
+                                <form method="POST" action="/silos/{{ $primeSilo->id }}">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="submit" value="Delete">
+                                </form>
+                            </div>
                         @endforeach
                     </div>
                 </div>
