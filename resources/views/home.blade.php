@@ -15,7 +15,10 @@
     </div>
 </div>
 @endsection
-
+<?php
+/*
 @foreach($allWaste as $waste)
     <p>Silo {{ $waste->waste_silo_number }} is voor {{ $waste->waste_full_percentage }}% gevuld met {{ $waste->block_type_id }}</p>
 @endforeach
+*/
+?>
