@@ -9,8 +9,12 @@ use App\Http\Requests;
 
 class ManageAccountController extends Controller
 {
-    
-    public function index()
+    public function index(){
+        $allUsers = User::all();
+        $userData['users'] = $allUsers;
+        return view('manageaccount/overview', $userData);
+    }
+    public function indexAddAccount()
     {
        return view('manageaccount/add');
     }
@@ -52,7 +56,9 @@ class ManageAccountController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        $userData['user'] = $user;
+        return view('manageaccount/show', $userData);
     }
 
     /**

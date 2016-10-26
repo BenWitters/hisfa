@@ -47,8 +47,9 @@ Route::resource('waste', 'WasteController');
 Route::get('/users/manage', function () {
     return view('users/list');
 });
-
-Route::get('/manageaccounts/add', 'ManageAccountController@index');
+Route::get('/manageaccounts', 'ManageAccountController@index');
+Route::get('/manageaccounts/add', 'ManageAccountController@indexAddAccount');
+Route::get('/manageaccounts/{id}', 'ManageAccountController@show');
 Route::post('/manageaccounts/create', 'ManageAccountController@create');
 
 Route::post('/account/updatePassword', "UserController@updatePassword");
