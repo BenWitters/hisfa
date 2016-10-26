@@ -48,9 +48,8 @@ Route::get('/users/manage', function () {
     return view('users/list');
 });
 
-Route::get('/users/add', function () {
-    return view('users/add');
-});
+Route::get('/manageaccounts/add', 'ManageAccountController@index');
+Route::post('/manageaccounts/create', 'ManageAccountController@create');
 
 Route::post('/account/updatePassword', "UserController@updatePassword");
 Route::post('/account/updateProfilePicture', "UserController@changeProfilePicture");
