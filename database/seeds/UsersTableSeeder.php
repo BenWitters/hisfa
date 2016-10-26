@@ -22,8 +22,8 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'name' => 'tom',
-                'email' => 'tom@hisfa.be',
-                'password' => bcrypt('tom'),
+                'email' => 'tom@changeme.hisfa',
+                'password' => bcrypt('hisfa'),
                 'profile_picture' => 'img/default/default-user-avatar.jpg',
                 'is_admin' => true
             ]
