@@ -25,16 +25,14 @@ Route::get('/waste', "WasteController@index");
 Route::get('/silos', "PrimesiloController@index");
 
 
-Route::get('/blocks', function () {
-    return view('blocks/blocks');
-});
+Route::get('/blocks', 'BlockController@index');
+Route::post('/blocks/addLength', 'BlockController@addLength');
 
 //Route::get('/blocktypes', "BlockTypeController@index");
 //Route::get('/blocktypes/create', "BlockTypeController@create");
 //Route::post('/blocktypes', 'BlockTypeController@store');
 //Route::get('/blocktypes', "BlockTypeController@index");
 Route::resource('blocktypes', 'BlockTypeController');
-
 Route::resource('materialtypes', 'MaterialTypeController');
 
 Route::resource('waste', 'WasteController');
