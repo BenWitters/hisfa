@@ -15,7 +15,7 @@ class CreateBlocksTable extends Migration
     {
         Schema::create('blocks', function (Blueprint $table) {
             $table->increments('block_id');
-            $table->integer('length');
+            $table->double('length');
             $table->integer('amount');
             $table->integer('block_type_id')->unsigned()->index();
             $table->foreign('block_type_id')->references('id')->on('blocktypes');
