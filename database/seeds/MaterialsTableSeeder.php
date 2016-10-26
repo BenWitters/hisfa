@@ -14,7 +14,6 @@ class MaterialsTableSeeder extends Seeder
         $materials = [
             [
                 'amount' => 1,
-                'material_type_id' => 1
             ],
             [
                 'amount' => 1,
@@ -22,15 +21,13 @@ class MaterialsTableSeeder extends Seeder
             ],
             [
                 'amount' => 1,
-                'material_type_id' => 3
+
             ],
             [
                 'amount' => 1,
-                'material_type_id' => 4
             ],
             [
                 'amount' => 1,
-                'material_type_id' => 5
             ]
 
         ];

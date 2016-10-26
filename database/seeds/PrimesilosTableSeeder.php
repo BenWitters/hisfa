@@ -15,32 +15,26 @@ class PrimesilosTableSeeder extends Seeder
             [
                 'prime_silo_number' => 1,
                 'prime_full_percentage' => 10,
-                'material_id' => 1
             ],
             [
                 'prime_silo_number' => 2,
                 'prime_full_percentage' => 22,
-                'material_id' => 2
             ],
             [
                 'prime_silo_number' => 3,
                 'prime_full_percentage' => 68,
-                'material_id' => 3
             ],
             [
                 'prime_silo_number' => 4,
                 'prime_full_percentage' => 45,
-                'material_id' => 4
             ],
             [
                 'prime_silo_number' => 5,
                 'prime_full_percentage' => 84,
-                'material_id' => 5
             ],
             [
                 'prime_silo_number' => 6,
                 'prime_full_percentage' => 33,
-                'material_id' => 1
             ]
 
         ];
