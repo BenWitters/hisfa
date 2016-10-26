@@ -19,9 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/', 'HomeController@index');
+//Route::get('/', 'WasteController@index');
+
 Route::get('/account', "UserController@index");
-Route::get('/waste', "WasteController@index");
+//Route::get('/waste', "WasteController@index");
 Route::get('/silos', "PrimesiloController@index");
 Route::delete('/silos/{id}', "PrimesiloController@delete");
 
