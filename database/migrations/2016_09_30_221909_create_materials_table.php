@@ -14,7 +14,7 @@ class CreateMaterialsTable extends Migration
     public function up()
     {
         Schema::create('materials', function (Blueprint $table) {
-            $table->increments('material_id');
+            $table->increments('id');
             $table->integer('amount');
             $table->integer('material_type_id')->unsigned()->index();
             $table->foreign('material_type_id')->references('id')->on('materialtypes');

@@ -11,4 +11,9 @@ class Blocktypes extends Model
     ];
 
     protected $table = 'blocktypes';
+
+    public function waste()
+    {
+        return $this->belongsTo('App\Waste');
+    }
 }

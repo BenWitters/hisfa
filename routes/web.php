@@ -28,6 +28,9 @@ Route::get('/account', "UserController@index");
 Route::get('/silos', "PrimesiloController@index");
 Route::delete('/silos/{id}', "PrimesiloController@delete");
 
+
+
+
 Route::get('/blocks', 'BlockController@index');
 Route::post('/blocks/addLength', 'BlockController@addLength');
 
@@ -39,7 +42,7 @@ Route::resource('blocktypes', 'BlockTypeController');
 Route::resource('materialtypes', 'MaterialTypeController');
 
 Route::resource('waste', 'WasteController');
-
+// controller & model voor prime & materials
 
 Route::get('/users/manage', function () {
     return view('users/list');
