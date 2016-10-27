@@ -15,7 +15,7 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="checkboxes-0">
-                            <input type="checkbox" {{ $user['get_notifications_prime'] == 1 ? 'checked' : ''}}  name="can_view_dashboard" value="dashboard">
+                            <input type="checkbox" {{ $user['can_view_dashboard'] == 1 ? 'checked' : ''}}  name="can_view_dashboard" value="dashboard">
                             Kan dashboard bekijken
                         </label>
                     </div>
@@ -27,7 +27,7 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="checkboxes-0">
-                            <input type="checkbox" {{ $user['get_notifications_waste'] == 1 ? 'checked' : ''}} name="can_view_blocks" value="viewBlocks">
+                            <input type="checkbox" {{ $user['can_view_blocks'] == 1 ? 'checked' : ''}} name="can_view_blocks" value="viewBlocks">
                             Kan blokken stock bekijken
                         </label>
                     </div>
@@ -39,7 +39,7 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="checkboxes-0">
-                            <input type="checkbox" {{ $user['get_notifications_waste'] == 1 ? 'checked' : ''}} name="can_update_blocks" value="updateBlocks">
+                            <input type="checkbox" {{ $user['can_update_blocks'] == 1 ? 'checked' : ''}} name="can_update_blocks" value="updateBlocks">
                             Kan blokken stock beheren
                         </label>
                     </div>
@@ -51,7 +51,7 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="checkboxes-0">
-                            <input type="checkbox" {{ $user['get_notifications_waste'] == 1 ? 'checked' : ''}} name="can_view_waste" value="viewWaste">
+                            <input type="checkbox" {{ $user['can_view_waste'] == 1 ? 'checked' : ''}} name="can_view_waste" value="viewWaste">
                             Kan afvalsilo's bekijken
                         </label>
                     </div>
@@ -63,7 +63,7 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="checkboxes-0">
-                            <input type="checkbox" {{ $user['get_notifications_waste'] == 1 ? 'checked' : ''}} name="can_manage_waste" value="updateWaste">
+                            <input type="checkbox" {{ $user['can_update_waste'] == 1 ? 'checked' : ''}} name="can_update_waste" value="updateWaste">
                             Kan afvalsilo's beheren
                         </label>
                     </div>
@@ -75,7 +75,7 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="checkboxes-0">
-                            <input type="checkbox" {{ $user['get_notifications_waste'] == 1 ? 'checked' : ''}} name="can_view_prime" value="viewPrime">
+                            <input type="checkbox" {{ $user['can_view_prime'] == 1 ? 'checked' : ''}} name="can_view_prime" value="viewPrime">
                             Kan primesilo's bekijken
                         </label>
                     </div>
@@ -87,7 +87,7 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="checkboxes-0">
-                            <input type="checkbox" {{ $user['get_notifications_waste'] == 1 ? 'checked' : ''}} name="can_manage_prime" value="updatePrime">
+                            <input type="checkbox" {{ $user['can_update_prime'] == 1 ? 'checked' : ''}} name="can_update_prime" value="updatePrime">
                             Kan primesilo's beheren
                         </label>
                     </div>
@@ -99,7 +99,7 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="checkboxes-0">
-                            <input type="checkbox" {{ $user['get_notifications_waste'] == 1 ? 'checked' : ''}} name="is_admin" value="isAdmin">
+                            <input type="checkbox" {{ $user['is_admin'] == 1 ? 'checked' : ''}} name="is_admin" value="isAdmin">
                             Kan gebruikers beheren
                         </label>
                     </div>

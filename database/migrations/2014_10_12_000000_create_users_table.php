@@ -22,6 +22,14 @@ class CreateUsersTable extends Migration
             $table->boolean("is_admin")->nullable();
             $table->boolean("get_notifications_prime")->nullable();
             $table->boolean("get_notifications_waste")->nullable();
+            $table->boolean("can_view_dashboard")->nullable();
+            $table->boolean("can_view_blocks")->nullable();
+            $table->boolean("can_update_blocks")->nullable();
+            $table->boolean("can_view_waste")->nullable();
+            $table->boolean("can_update_waste")->nullable();
+            $table->boolean("can_view_prime")->nullable();
+            $table->boolean("can_update_prime")->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });
