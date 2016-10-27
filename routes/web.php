@@ -51,6 +51,7 @@ Route::get('/manageaccounts', 'ManageAccountController@index');
 Route::get('/manageaccounts/add', 'ManageAccountController@indexAddAccount');
 Route::get('/manageaccounts/{id}', 'ManageAccountController@show');
 Route::post('/manageaccounts/create', 'ManageAccountController@create');
+Route::post('/manageaccounts/updateAccountSettings', 'ManageAccountController@update');
 
 Route::post('/account/updatePassword', "UserController@updatePassword");
 Route::post('/account/updateProfilePicture', "UserController@changeProfilePicture");

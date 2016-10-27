@@ -4,18 +4,22 @@
     <h1>Instellingen voor {{$user->name}}</h1>
 
     <!-- set notification -->
-    <form class="form-horizontal" method="POST" action="/manageaccounts/{{$user->id}}">
+    <form class="form-horizontal" method="POST" action="/manageaccounts/updateAccountSettings">
         {{ csrf_field() }}
 
         <fieldset>
+            <div class="form-group">
+                <div class="col-md-4">
+                    <input name="id" type="hidden" value="{{ $user->id }}" class="form-control input-md">
 
+                </div>
             <!-- Multiple Checkboxes -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="checkboxes"></label>
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="checkboxes-0">
-                            <input type="checkbox" {{ $user['can_view_dashboard'] == 1 ? 'checked' : ''}}  name="can_view_dashboard" value="dashboard">
+                            <input type="checkbox" {{ $user['can_view_dashboard'] == 1 ? 'checked' : ''}}  name="can_view_dashboard" value="viewDashboard">
                             Kan dashboard bekijken
                         </label>
                     </div>
