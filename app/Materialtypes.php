@@ -11,4 +11,9 @@ class Materialtypes extends Model
     ];
 
     protected $table = 'materialtypes';
+
+    public function primesilo()
+    {
+        return $this->hasMany('App\Primesilo');
+    }
 }
