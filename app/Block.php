@@ -12,6 +12,6 @@ class Block extends Model
 
     public function blocktype()
     {
-        return $this->belongsTo('App\Blocktypes');
+        return $this->belongsTo('App\Blocktypes', 'block_type_id', 'id');
     }
 }

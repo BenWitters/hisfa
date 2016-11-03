@@ -17,4 +17,13 @@ class SilosController extends Controller
         $dataprime['allPrime'] = $prime;
         return View('home', $dataprime, $datawaste);
     }
+
+    public function showsilos(){
+        $waste = \App\Waste::all(); // select * from wastesilos
+        $datawaste['allWaste'] = $waste;
+
+        $prime = \App\Primesilo::all();
+        $dataprime['allPrime'] = $prime;
+        return View('silos/silos', $dataprime, $datawaste);
+    }
 }

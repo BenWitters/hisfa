@@ -31,7 +31,7 @@
         {{ $value->block_type_name }}
 
             @foreach($allBlock as $block)
-                <br> {{ $block->amount }} van {{ $block->block_id }} met lengte {{ $block->length }}
+                <br> {{ $block->amount }} van {{ $block->blocktype->block_type_name }} met lengte {{ $block->length }}
             @endforeach
     <form class="form-horizontal" method="POST" action="/blocks/addLength">
         {{ csrf_field() }}
