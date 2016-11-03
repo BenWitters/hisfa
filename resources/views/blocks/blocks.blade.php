@@ -23,10 +23,16 @@
 
 @section('content')
     <h1>Blocks</h1>
-    @foreach($blocktypes as $key => $value)
+
+
+    @foreach($allBlocktypes as $key => $value)
+
         <div class="text-center">
         {{ $value->block_type_name }}
 
+            @foreach($allBlock as $block)
+                <br> {{ $block->amount }} van {{ $block->block_id }} met lengte {{ $block->length }}
+            @endforeach
     <form class="form-horizontal" method="POST" action="/blocks/addLength">
         {{ csrf_field() }}
 
@@ -59,6 +65,8 @@
 
         </div>
     @endforeach
+
+
 
 @endsection
 

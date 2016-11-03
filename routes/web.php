@@ -52,6 +52,8 @@ Route::get('/users/add', function () {
     return view('users/add');
 });
 
+Route::get('/', 'SilosController@index');
+
 Route::post('/account/updatePassword', "UserController@updatePassword");
 Route::post('/account/updateProfilePicture', "UserController@changeProfilePicture");
 Route::post('/account/updateNotificationSettings', 'UserController@updateNotificationSettings');

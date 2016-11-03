@@ -13,8 +13,11 @@ class BlockController extends Controller
     public function index(){
 
         $blocktypes = Blocktypes::all();
+        $datablocktypes['allBlocktypes'] = $blocktypes;
+        $blocks = Block::all();
+        $datablock['allBlock'] = $blocks;
 
-        return View('blocks/blocks')->with('blocktypes', $blocktypes);
+        return View('blocks/blocks', $datablock, $datablocktypes);
     }
     
     
