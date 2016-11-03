@@ -11,6 +11,6 @@ class Primesilo extends Model
 
     public function material()
     {
-        return $this->hasOne('App\Material', 'material_id', 'material_id');
+        return $this->belongsTo('App\Materialtypes', 'material_id', 'id');
     }
 }
