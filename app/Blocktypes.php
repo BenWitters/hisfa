@@ -12,8 +12,8 @@ class Blocktypes extends Model
 
     protected $table = 'blocktypes';
 
-    public function waste()
+    public function blocks()
     {
-        return $this->belongsTo('App\Waste');
+        return $this->hasMany('App\Block');
     }
 }
