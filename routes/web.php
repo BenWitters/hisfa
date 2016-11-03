@@ -53,6 +53,8 @@ Route::get('/manageaccounts/{id}', 'ManageAccountController@show');
 Route::post('/manageaccounts/create', 'ManageAccountController@create');
 Route::post('/manageaccounts/updateAccountSettings', 'ManageAccountController@update');
 
+Route::get('/', 'SilosController@index');
+
 Route::post('/account/updatePassword', "UserController@updatePassword");
 Route::post('/account/updateProfilePicture', "UserController@changeProfilePicture");
 Route::post('/account/updateNotificationSettings', 'UserController@updateNotificationSettings');
