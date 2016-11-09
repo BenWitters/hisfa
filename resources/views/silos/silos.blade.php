@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<<<<<<< HEAD
     <header class="view__sub silos">
         <div class="wrapper">
             <h1 class="view__sub__title">Silo's</h1>

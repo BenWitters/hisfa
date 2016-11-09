@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<<<<<<< HEAD
     <header class="view__sub blocks">
         <div class="wrapper">
             <h1 class="view__sub__title">Blokken</h1>
@@ -17,6 +18,7 @@
     @foreach($allBlocktypes as $key => $value)
     <div class="blocks">
     <div class="blocks__type">
+
         {{ $value->block_type_name }}
         <div class="blocks__type__add">
             +
@@ -28,6 +30,9 @@
            @endforeach
         
 
+            @foreach($allBlock as $block)
+                <br> {{ $block->amount }} van {{ $block->blocktype->block_type_name }} met lengte {{ $block->length }}
+            @endforeach
     <form class="form-horizontal" method="POST" action="/blocks/addLength">
         {{ csrf_field() }}
 
@@ -63,6 +68,7 @@
 
     @endforeach
 
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
@@ -70,4 +76,5 @@
         $(this).parent().parent().find(".blocks__add").toggle();
     });
     </script>
+
 @endsection
