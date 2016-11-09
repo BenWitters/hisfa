@@ -12,10 +12,14 @@
 */
 
 
+use App\Http\Middleware\IsAdmin;
+use App\Http\Middleware\RedirectIfAuthenticated;
+use Illuminate\Auth\Middleware\Authenticate;
+
 Auth::routes();
 
 //dashboard
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->middleware(Authenticate::class);
 
 
 // silos
@@ -23,13 +27,13 @@ Route::get('/', 'HomeController@index');
 //Route::get('/', 'WasteController@index');
 
 //Route::get('/waste', "WasteController@index");
-Route::get('/silos', "SilosController@index");
+Route::get('/silos', "SilosController@index")->middleware(Authenticate::class);
 Route::delete('/silos/{id}', "PrimesiloController@delete");
 Route::resource('waste', 'WasteController');
 
 
 // blocks
-Route::get('/blocks', 'BlockController@index');
+Route::get('/blocks', 'BlockController@index')->middleware(Authenticate::class);
 Route::post('/blocks/addLength', 'BlockController@addLength');
 
 //Route::get('/blocktypes', "BlockTypeController@index");
@@ -43,17 +47,16 @@ Route::resource('blocktypes', 'BlockTypeController');
 Route::resource('materialtypes', 'MaterialTypeController');
 
 
-// manage account toutes
-Route::get('/manageaccounts', 'ManageAccountController@index');
-Route::get('/manageaccounts/add', 'ManageAccountController@indexAddAccount');
-Route::get('/manageaccounts/{id}', 'ManageAccountController@show');
+// manage account routes
+Route::get('/manageaccounts', 'ManageAccountController@index')->middleware(Authenticate::class, IsAdmin::class);
+Route::get('/manageaccounts/add', 'ManageAccountController@indexAddAccount')->middleware(Authenticate::class);
+Route::get('/manageaccounts/{id}', 'ManageAccountController@show')->middleware(Authenticate::class);
 Route::post('/manageaccounts/create', 'ManageAccountController@create');
 Route::post('/manageaccounts/updateAccountSettings', 'ManageAccountController@update');
 
 
 // account routes
-Route::get('/account', "UserController@index");
-Route::post('/account', "UserController@showProfile");
+Route::get('/account', "UserController@index")->middleware(Authenticate::class);
 Route::post('/account/updatePassword', "UserController@updatePassword");
 Route::post('/account/updateProfilePicture', "UserController@changeProfilePicture");
 Route::post('/account/updateNotificationSettings', 'UserController@updateNotificationSettings');
