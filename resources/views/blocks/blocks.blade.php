@@ -1,40 +1,37 @@
-@extends('layouts/app');
-
-@section('header')
-
-@endsection
-
-<head>
-    <title>Blocks</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
-
-    <nav class="navbar navbar-inverse">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="{{ URL::to('blocks') }}">Blocks</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a href="{{ URL::to('blocks') }}">View All The Blocks</a></li>
-            <li><a href="{{ URL::to('blocks/create') }}">Create a Blocks</a>
-        </ul>
-    </nav>
+@extends('layouts.app')
 
 @section('content')
-    <h1>Blocks</h1>
+    <header class="view__sub blocks">
+        <div class="wrapper">
+            <h1 class="view__sub__title">Blokken</h1>
+            <a href="{{ URL::to('blocks/create') }}" class="view__sub__button button">Bloktype toevoegen</a>
+        </div>
+        
+        <div class="view__top__overlay"></div>
+   </header>
+    <!-- <h1>Blocks</h1> -->
+    <div class="content wrapper">
+ 
+        
+    
     @foreach($blocktypes as $key => $value)
-        <div class="text-center">
+    <div class="blocks">
+    <div class="blocks__type">
         {{ $value->block_type_name }}
+        <div class="blocks__type__add">
+            +
+        </div>
+    </div>
+        
 
     <form class="form-horizontal" method="POST" action="/blocks/addLength">
         {{ csrf_field() }}
 
 
-                <fieldset>
-
+                <div class="blocks__add">
+                    <h2>Nieuwe lengte toevoegen</h2>
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="length">New Length</label>
+                        <label class="col-md-4 control-label" for="length">Lengte: </label>
                         <div class="col-md-4">
                             <input id="length" name="length" type="text" placeholder="Block Length" class="form-control input-md" required="">
 
@@ -46,22 +43,27 @@
                             <input value="{{ $value->id }}" id="blockTypeId" name="blockTypeId" type="hidden" class="form-control input-md" required="">
 
                 </div>
+
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="btnsave"></label>
                 <div class="col-md-4">
-                    <button id="btnsave" name="btnsave" class="btn btn-primary">Add block length</button>
+                    <button id="btnsave" name="btnsave" class="blocks__button button">Toevoegen</button>
                 </div>
             </div>
 
-        </fieldset>
-    </form>
-
         </div>
+
+    </form>
+    </div>
+
     @endforeach
 
-@endsection
-
-@section('footerscripts')
-
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    $(".blocks__type__add").click(function(){
+        $(this).parent().parent().find(".blocks__add").toggle();
+    });
+    </script>
 @endsection

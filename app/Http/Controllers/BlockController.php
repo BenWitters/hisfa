@@ -31,4 +31,5 @@ class BlockController extends Controller
         return Redirect('blocks');
 
     }
+
 }

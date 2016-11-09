@@ -75,4 +75,9 @@ class BlockTypeController extends Controller {
         return Redirect ('blocktypes');
     }
 
+    public function showAll(){
+        $all = Blocktypes::get();
+        return $all;
+    }
+
 }

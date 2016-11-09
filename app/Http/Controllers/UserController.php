@@ -45,6 +45,12 @@ class UserController extends Controller
 
     }
 
+    public function showProfile(Request $request){
+
+        return redirect('/account');
+
+    }
+
     // change profile picture
     public function changeProfilePicture(Request $request){
 

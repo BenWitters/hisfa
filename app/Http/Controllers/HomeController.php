@@ -8,6 +8,7 @@ use App\Notifications\WasteFull;
 use App\User;
 use App\Primesilo;
 use App\Waste;
+use App\Blocktypes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -32,7 +33,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // prime silos
+       
+        $allBlocks = Blocktypes::all();
+
+       
         
         // get all users
         $users = User::all();
@@ -73,6 +77,8 @@ class HomeController extends Controller
 
         }
 
-        return view('home');
+         // load the view and pass the types
+        return View('home')
+            ->with('allBlocks', $allBlocks);
     }
 }
