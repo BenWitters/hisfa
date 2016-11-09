@@ -24,14 +24,23 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->middleware(Authenticate::class, ViewDashboard::class);
 
 
+
 // silos
 // Route::get('/', 'SilosController@index');
 //Route::get('/', 'WasteController@index');
 
+Route::get('/', 'HomeController@index');
+
+
 //Route::get('/waste', "WasteController@index");
+
 Route::get('/silos', "SilosController@index")->middleware(Authenticate::class, ViewSilos::class);
 Route::delete('/silos/{id}', "PrimesiloController@delete");
 Route::resource('waste', 'WasteController');
+
+//Route::get('/silos', "PrimesiloController@index");
+//Route::delete('/silos/{id}', "PrimesiloController@delete");
+
 
 
 // blocks
@@ -46,7 +55,20 @@ Route::post('/blocks/addLength', 'BlockController@addLength');
 
 //materials
 Route::resource('blocktypes', 'BlockTypeController');
+
+
+
 Route::resource('materialtypes', 'MaterialTypeController');
+Route::resource('waste', 'WasteController');
+
+Route::resource('materials', 'MaterialController');
+Route::resource('primesilo', 'PrimesiloController');
+
+
+
+Route::get('/users/manage', function () {
+    return view('users/list');
+});
 
 
 // manage account routes
