@@ -11,8 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.min.css">
     <link href="/css/app.css" rel="stylesheet">
-
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -53,9 +53,16 @@
                 </a>
             </li>
         </ul>
-        <a class="menubar__user" href="/account">
+        <div class="menubar__user">
             <div class="menubar__user__avatar" style="background-image: url(<?php echo Auth()->user()->profile_picture; ?>)"></div>
-        </a>
+            <div class="menubar__user__sub">
+                <ul>
+                    <a href="/account"><li>Profiel wijzigen</li></a>
+                    <a href="/account/logout"><li>Uitloggen</li></a>
+                </ul>
+            </div>
+            <div class="menubar__user__overlay"></div>
+        </div>
     </nav>
     <div class="container view">
     @yield('content')
@@ -63,6 +70,11 @@
     <!-- Scripts -->
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+    <script>
+        $(".menubar__user").click(function(){
+            $(".menubar__user__sub").toggle();
+            $(".menubar__user__overlay").toggle();
+        });
+    </script>
 </body>
 </html>

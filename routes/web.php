@@ -26,7 +26,7 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/account', "UserController@index");
 //Route::get('/waste', "WasteController@index");
-Route::get('/silos', "PrimesiloController@index");
+Route::get('/silos', "SilosController@index");
 Route::delete('/silos/{id}', "PrimesiloController@delete");
 
 
@@ -55,6 +55,7 @@ Route::post('/manageaccounts/create', 'ManageAccountController@create');
 Route::post('/manageaccounts/updateAccountSettings', 'ManageAccountController@update');
 
 Route::post('/account', "UserController@showProfile");
+Route::get('/account/logout', "UserController@logout");
 Route::post('/account/updatePassword', "UserController@updatePassword");
 Route::post('/account/updateProfilePicture', "UserController@changeProfilePicture");
 Route::post('/account/updateNotificationSettings', 'UserController@updateNotificationSettings');
