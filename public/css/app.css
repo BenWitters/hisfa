@@ -522,6 +522,15 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 	color: #546E7A;
 }
 
+.button--dark
+{
+		border-color: #546E7A;
+	color: #546E7A;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-size: 12px;
+}
+
 .blocks__add
 {
 	display: none;
@@ -541,4 +550,71 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 	color: white;
 	font-size: 16px;
 	font-weight: 700;
+}
+
+.silos-grid
+{
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 40px;
+}
+
+.silos-grid .col
+{
+	height: 300px;
+	width: 30%;
+	margin-bottom: 30px;
+	background-color: #455A64;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	position: relative;
+}
+
+.silos-grid__col__percentage
+{
+	font-size: 48px;
+	color: white;
+	font-weight: 700;
+	margin: 0;
+}
+
+.silos-grid .wrapper
+{
+	position: relative;
+	z-index: 9999;
+}
+
+.silos-grid__col__fill
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #37474F;
+}
+
+.silos-grid__col__id
+{
+	font-size: 14px;
+	text-transform: uppercase;
+	color: white;
+}
+
+.silos-grid__col__alert
+{
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 30px;
+	height: 30px;
+	background-color: #F44336;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-weight: 700;
+	border-radius: 100%;
+	border: 3px solid #D32F2F; 
 }

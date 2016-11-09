@@ -22,7 +22,7 @@ class WasteController extends Controller
         $waste = Waste::all();
 
         // load the view and pass the types
-        return View('waste.waste')
+        return View('silos')
             ->with('waste', $waste);
     }
 
