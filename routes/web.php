@@ -21,12 +21,11 @@ Auth::routes();
 
 
 Route::get('/', 'HomeController@index');
-//Route::get('/', 'WasteController@index');
 
 Route::get('/account', "UserController@index");
 //Route::get('/waste', "WasteController@index");
-Route::get('/silos', "PrimesiloController@index");
-Route::delete('/silos/{id}', "PrimesiloController@delete");
+//Route::get('/silos', "PrimesiloController@index");
+//Route::delete('/silos/{id}', "PrimesiloController@delete");
 
 
 
@@ -39,10 +38,14 @@ Route::post('/blocks/addLength', 'BlockController@addLength');
 //Route::post('/blocktypes', 'BlockTypeController@store');
 //Route::get('/blocktypes', "BlockTypeController@index");
 Route::resource('blocktypes', 'BlockTypeController');
-Route::resource('materialtypes', 'MaterialTypeController');
 
+Route::resource('materialtypes', 'MaterialTypeController');
 Route::resource('waste', 'WasteController');
-// controller & model voor prime & materials
+
+Route::resource('materials', 'MaterialController');
+Route::resource('primesilo', 'PrimesiloController');
+
+
 
 Route::get('/users/manage', function () {
     return view('users/list');

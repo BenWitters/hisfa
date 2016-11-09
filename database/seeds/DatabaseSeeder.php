@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(MaterialtypesTableSeeder::class);
 
         //$this->call(MaterialsTableSeeder::class);
-        //$this->call(PrimesilosTableSeeder::class);
         
         $this->call(PrimesilosTableSeeder::class);
         $this->call(WastesilosTableSeeder::class);
