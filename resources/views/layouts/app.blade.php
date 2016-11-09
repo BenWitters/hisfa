@@ -60,7 +60,7 @@
             @endif
         </ul>
         <a class="menubar__user" href="/account">
-            <div class="menubar__user__avatar" style="background-image: url(<?php echo Auth()->user()->profile_picture; ?>)"></div>
+            <div class="menubar__user__avatar" style="background-image: url(img/profilePictures/<?php echo Auth()->user()->profile_picture; ?>)"></div>
         </a>
     </nav>
     <div class="container view">
