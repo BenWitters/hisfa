@@ -25,9 +25,6 @@
         </div>
     </div>
 
-     @foreach($allBlock as $block)
-               <br> {{ $block->amount }} van {{ $block->block_id }} met lengte {{ $block->length }}
-           @endforeach
         
 
             @foreach($allBlock as $block)
