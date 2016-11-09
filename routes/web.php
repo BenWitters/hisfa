@@ -49,8 +49,8 @@ Route::resource('materialtypes', 'MaterialTypeController');
 
 // manage account routes
 Route::get('/manageaccounts', 'ManageAccountController@index')->middleware(Authenticate::class, IsAdmin::class);
-Route::get('/manageaccounts/add', 'ManageAccountController@indexAddAccount')->middleware(Authenticate::class);
-Route::get('/manageaccounts/{id}', 'ManageAccountController@show')->middleware(Authenticate::class);
+Route::get('/manageaccounts/add', 'ManageAccountController@indexAddAccount')->middleware(Authenticate::class, IsAdmin::class);
+Route::get('/manageaccounts/{id}', 'ManageAccountController@show')->middleware(Authenticate::class, IsAdmin::class);
 Route::post('/manageaccounts/create', 'ManageAccountController@create');
 Route::post('/manageaccounts/updateAccountSettings', 'ManageAccountController@update');
 
