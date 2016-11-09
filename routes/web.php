@@ -11,27 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    //return view('welcome');
-    return view('dashboard/dashboard');
-});
-
 
 Auth::routes();
 
-
+//dashboard
 Route::get('/', 'HomeController@index');
+
+
+// silos
 // Route::get('/', 'SilosController@index');
 //Route::get('/', 'WasteController@index');
 
-Route::get('/account', "UserController@index");
 //Route::get('/waste', "WasteController@index");
 Route::get('/silos', "SilosController@index");
 Route::delete('/silos/{id}', "PrimesiloController@delete");
+Route::resource('waste', 'WasteController');
 
 
-
-
+// blocks
 Route::get('/blocks', 'BlockController@index');
 Route::post('/blocks/addLength', 'BlockController@addLength');
 
@@ -39,21 +36,23 @@ Route::post('/blocks/addLength', 'BlockController@addLength');
 //Route::get('/blocktypes/create', "BlockTypeController@create");
 //Route::post('/blocktypes', 'BlockTypeController@store');
 //Route::get('/blocktypes', "BlockTypeController@index");
+
+
+//materials
 Route::resource('blocktypes', 'BlockTypeController');
 Route::resource('materialtypes', 'MaterialTypeController');
 
-Route::resource('waste', 'WasteController');
-// controller & model voor prime & materials
 
-Route::get('/users/manage', function () {
-    return view('users/list');
-});
+// manage account toutes
 Route::get('/manageaccounts', 'ManageAccountController@index');
 Route::get('/manageaccounts/add', 'ManageAccountController@indexAddAccount');
 Route::get('/manageaccounts/{id}', 'ManageAccountController@show');
 Route::post('/manageaccounts/create', 'ManageAccountController@create');
 Route::post('/manageaccounts/updateAccountSettings', 'ManageAccountController@update');
 
+
+// account routes
+Route::get('/account', "UserController@index");
 Route::post('/account', "UserController@showProfile");
 Route::post('/account/updatePassword', "UserController@updatePassword");
 Route::post('/account/updateProfilePicture', "UserController@changeProfilePicture");
