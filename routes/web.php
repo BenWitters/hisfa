@@ -14,12 +14,14 @@
 
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\RedirectIfAuthenticated;
+use App\Http\Middleware\ViewDashboard;
+use App\Http\Middleware\ViewSilos;
 use Illuminate\Auth\Middleware\Authenticate;
 
 Auth::routes();
 
 //dashboard
-Route::get('/', 'HomeController@index')->middleware(Authenticate::class);
+Route::get('/', 'HomeController@index')->middleware(Authenticate::class, ViewDashboard::class);
 
 
 // silos
@@ -27,7 +29,7 @@ Route::get('/', 'HomeController@index')->middleware(Authenticate::class);
 //Route::get('/', 'WasteController@index');
 
 //Route::get('/waste', "WasteController@index");
-Route::get('/silos', "SilosController@index")->middleware(Authenticate::class);
+Route::get('/silos', "SilosController@index")->middleware(Authenticate::class, ViewSilos::class);
 Route::delete('/silos/{id}', "PrimesiloController@delete");
 Route::resource('waste', 'WasteController');
 
