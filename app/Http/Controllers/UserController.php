@@ -51,6 +51,11 @@ class UserController extends Controller
 
     }
 
+    public function logout(){
+        Auth::logout();
+        return redirect('/');
+    }
+
     // change profile picture
     public function changeProfilePicture(Request $request){
 
