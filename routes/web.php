@@ -26,7 +26,7 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/account', "UserController@index");
 //Route::get('/waste', "WasteController@index");
-Route::get('/silos', "SilosController@showsilos");
+Route::get('/silos', "SilosController@index");
 Route::delete('/silos/{id}', "PrimesiloController@delete");
 
 

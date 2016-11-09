@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
+
     <header class="view__sub blocks">
         <div class="wrapper">
             <h1 class="view__sub__title">Blokken</h1>

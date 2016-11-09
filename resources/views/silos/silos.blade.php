@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
     <header class="view__sub silos">
         <div class="wrapper">
             <h1 class="view__sub__title">Silo's</h1>
@@ -13,7 +12,7 @@
         <h2>Primesilo's</h2>
         <div class="grid silos-grid">
             
-            @foreach($primesilosData as $key => $value)
+            @foreach($allPrime as $key => $value)
                 <div class="col">
                     <div class="wrapper">
                         <p class="silos-grid__col__id">Silo {{ $value->prime_silo_number  }}</p>

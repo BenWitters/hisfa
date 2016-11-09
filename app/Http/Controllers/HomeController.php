@@ -84,6 +84,6 @@ class HomeController extends Controller
         $blocktypes = \App\Blocktypes::all();
         $allBlocks = $blocktypes;
 
-        return View('home', ['allPrime' => $allPrime, 'allWaste' => $allWaste, 'allBlocks' => $allBlocks]);
+        return View('home', ['allPrime' => $allPrime, 'allWaste' => $waste, 'allBlocks' => $allBlocks]);
     }
 }
