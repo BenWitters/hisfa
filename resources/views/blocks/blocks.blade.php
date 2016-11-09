@@ -14,7 +14,7 @@
  
         
     
-    @foreach($blocktypes as $key => $value)
+    @foreach($allBlocktypes as $key => $value)
     <div class="blocks">
     <div class="blocks__type">
         {{ $value->block_type_name }}
@@ -22,6 +22,10 @@
             +
         </div>
     </div>
+
+     @foreach($allBlock as $block)
+               <br> {{ $block->amount }} van {{ $block->block_id }} met lengte {{ $block->length }}
+           @endforeach
         
 
     <form class="form-horizontal" method="POST" action="/blocks/addLength">

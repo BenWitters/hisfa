@@ -21,6 +21,7 @@ Auth::routes();
 
 
 Route::get('/', 'HomeController@index');
+// Route::get('/', 'SilosController@index');
 //Route::get('/', 'WasteController@index');
 
 Route::get('/account', "UserController@index");

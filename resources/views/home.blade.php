@@ -9,6 +9,10 @@
         </header>
         <div class="wrapper">
             <div class="view__card view__card--graph">
+                @foreach($allWaste as $waste)
+                    <p>{{$waste->waste_full_percentage}}</p>
+                @endforeach
+
                 <div class="grid">
                     <div class="col col--center">
                         <canvas id="myChart" width="200" height="200"></canvas>
@@ -40,7 +44,7 @@
                         
                     </div>
                 @endforeach
-                
+
             </div>
         </div>
 

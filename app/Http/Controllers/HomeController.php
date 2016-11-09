@@ -33,8 +33,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-       
-        $allBlocks = Blocktypes::all();
+    
 
        
         
@@ -77,8 +76,14 @@ class HomeController extends Controller
 
         }
 
-         // load the view and pass the types
-        return View('home')
-            ->with('allBlocks', $allBlocks);
+        $waste = \App\Waste::all(); // select * from wastesilos
+        $allWaste = $waste;
+        $prime = \App\Primesilo::all();
+        $allPrime = $prime;
+
+        $blocktypes = \App\Blocktypes::all();
+        $allBlocks = $blocktypes;
+
+        return View('home', ['allPrime' => $allPrime, 'allWaste' => $allWaste, 'allBlocks' => $allBlocks]);
     }
 }
