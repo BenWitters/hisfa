@@ -28,7 +28,7 @@
             <li>
                 <a href="/silos">
 
-                    <img src="img/silo.png" alt="Silo's">
+                    <img src="/img/silo.png" alt="Silo's">
                     <p>Silo's</p>
                     
                 </a>
@@ -38,14 +38,14 @@
             @if(Auth::user()->can_view_blocks == 1)
             <li>
                 <a href="/blocks">
-                    <img src="img/blocks.png" alt="Silo's">
+                    <img src="/img/blocks.png" alt="Silo's">
                     <p>Blokken</p>
                 </a>
             </li>
             @endif
             <li>
                 <a href="">
-                    <img src="img/materials.png" alt="Silo's">
+                    <img src="/img/materials.png" alt="Silo's">
                     <p>Grondstoffen</p>
                 </a>
             </li>
@@ -53,7 +53,7 @@
             @if(Auth::user()->is_admin == 1)
             <li>
                 <a href="/manageaccounts">
-                    <img src="img/user.png" alt="Silo's">
+                    <img src="/img/user.png" alt="Silo's">
                     <p>Gebruikers</p>
                 </a>
             </li>
@@ -70,7 +70,7 @@
             <div class="menubar__user__overlay"></div>
         </div>
         <a class="menubar__user" href="/account">
-            <div class="menubar__user__avatar" style="background-image: url(img/profilePictures/<?php echo Auth()->user()->profile_picture; ?>)"></div>
+            <div class="menubar__user__avatar" style="background-image: url(/img/profilePictures/<?php echo Auth()->user()->profile_picture; ?>)"></div>
         </a>
     </nav>
     <div class="container view">
