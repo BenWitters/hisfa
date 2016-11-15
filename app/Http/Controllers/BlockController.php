@@ -17,6 +17,7 @@ class BlockController extends Controller
         $blocks = Block::all();
         $datablock['allBlock'] = $blocks;
 
+
         return View('blocks/blocks', $datablock, $datablocktypes);
     }
     

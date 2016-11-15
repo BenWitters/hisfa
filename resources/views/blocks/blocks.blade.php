@@ -28,6 +28,7 @@
         
     
             @foreach($allBlock as $block)
+                @if ($block->blocktype->id == $value->id)
                 <form action="/blocks/add" method="post">
                 {{ csrf_field() }}
                     <input type="text" name="blocktypeId" value="{{$block->blocktype->id}}">
@@ -36,6 +37,7 @@
                     <input type="submit" value="Toevoegen">
                 </form>
                 <br> {{ $block->amount }} van {{ $block->blocktype->block_type_name }} met lengte {{ $block->length }}
+                @endif
             @endforeach
     <form class="form-horizontal" method="POST" action="/blocks/addLength">
         {{ csrf_field() }}
