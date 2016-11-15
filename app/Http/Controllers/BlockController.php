@@ -41,7 +41,7 @@ class BlockController extends Controller
         $length = $request->input('length');
         $blockTypeId = $request->input('blocktypeId');
         $amount = $request->input('amount');
-        Block::where('block_type_id', '=', $blockTypeId)->update(array('amount' => $amount+1));
+        Block::where([['block_type_id', '=', $blockTypeId], ['length', '=', $length]])->update(array('amount' => $amount+1));
         return Redirect('blocks');
     }
 
