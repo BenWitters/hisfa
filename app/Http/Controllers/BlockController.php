@@ -35,4 +35,13 @@ class BlockController extends Controller
 
     }
 
+    public function addBlock(Request $request)
+    {
+        $length = $request->input('length');
+        $blockTypeId = $request->input('blocktypeId');
+        $amount = $request->input('amount');
+        Block::where('block_type_id', '=', $blockTypeId)->update(array('amount' => $amount+1));
+        return Redirect('blocks');
+    }
+
 }

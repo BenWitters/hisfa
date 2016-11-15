@@ -709,3 +709,11 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 	background-size: cover;
 	margin-bottom: 10px;
 }
+
+.control-label
+{
+	margin-top: 30px;
+	font-size: 12px;
+	text-transform: uppercase;
+	display: block;
+}

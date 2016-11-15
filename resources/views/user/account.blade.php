@@ -3,7 +3,7 @@
 @section('content')
     <header class="view__sub silos">
         <div class="wrapper">
-            <h1 class="view__sub__title"><?php echo Auth()->user()->name; ?></h1>
+            <h1 class="view__sub__title">Hallo, <?php echo Auth()->user()->name; ?></h1>
             <!-- <a href="{{ URL::to('blocks/create') }}" class="view__sub__button button">Bloktype toevoegen</a> -->
         </div>
         

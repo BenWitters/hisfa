@@ -45,7 +45,9 @@ Route::resource('waste', 'WasteController');
 
 // blocks
 Route::get('/blocks', 'BlockController@index')->middleware(Authenticate::class);
+Route::post('/blocks/add', 'BlockController@addBlock');
 Route::post('/blocks/addLength', 'BlockController@addLength');
+Route::get('/blocktypes/create', "BlockTypeController@create");
 
 //Route::get('/blocktypes', "BlockTypeController@index");
 //Route::get('/blocktypes/create', "BlockTypeController@create");
@@ -56,15 +58,11 @@ Route::post('/blocks/addLength', 'BlockController@addLength');
 //materials
 Route::resource('blocktypes', 'BlockTypeController');
 
-
-
 Route::resource('materialtypes', 'MaterialTypeController');
 Route::resource('waste', 'WasteController');
 
 Route::resource('materials', 'MaterialController');
 Route::resource('primesilo', 'PrimesiloController');
-
-
 
 Route::get('/users/manage', function () {
     return view('users/list');
