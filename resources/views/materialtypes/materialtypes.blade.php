@@ -42,7 +42,24 @@
 
                     <!-- edit -->
                     <a class="btn btn-small btn-info" href="{{ URL::to('materialtypes/' . $value->id . '/edit') }}">Edit this Materialtype</a>
+                </td>
+                <td>
+                    <!-- Octabins -->
+                    Octabins: {{ $value->amount }}
 
+                    <!-- Add octabin -->
+                    {!! Form::open(array('url' => 'materialtypes/' . $value->id . '/octabin', 'class' => 'pull-right')) !!}
+                    {!! Form::hidden('_method', 'POST') !!}
+                    {!! Form::submit('Add 1', array('class' => 'btn btn-info')) !!}
+                    {!! Form::close() !!}
+
+                    <!-- Delete octabin -->
+                    {!! Form::open(array('url' => 'materialtypes/' . $value->id . '/octabin', 'class' => 'pull-right')) !!}
+                    {!! Form::hidden('_method', 'DELETE') !!}
+                    {!! Form::submit('Delete 1', array('class' => 'btn btn-danger')) !!}
+                    {!! Form::close() !!}
+                </td>
+                <td>
                     <!-- delete -->
                     {{--<a class="btn btn-small btn-danger" href="{{ URL::to('blocktypes/' . $value->id . '/delete') }}">Delete this Blocktype</a>--}}
                     {!! Form::open(array('url' => 'materialtypes/' . $value->id, 'class' => 'pull-right')) !!}

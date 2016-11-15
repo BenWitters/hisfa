@@ -13,19 +13,24 @@ class MaterialtypesTableSeeder extends Seeder
     {
         $materialtypes = [
             [
-                'material_type_name' => 'f21MB-n'
+                'material_type_name' => 'f21MB-n',
+                'amount' => '0'
             ],
             [
-                'material_type_name' => 'RF23W-n'
+                'material_type_name' => 'RF23W-n',
+                'amount' => '0'
             ],
             [
-                'material_type_name' => 'KSE-20'
+                'material_type_name' => 'KSE-20',
+                'amount' => '0'
             ],
             [
-                'material_type_name' => 'KSE-30'
+                'material_type_name' => 'KSE-30',
+                'amount' => '0'
             ],
             [
-                'material_type_name' => 'F21B-n'
+                'material_type_name' => 'F21B-n',
+                'amount' => '0'
             ]
         ];
 
