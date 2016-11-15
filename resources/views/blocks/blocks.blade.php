@@ -5,7 +5,7 @@
     <header class="view__sub blocks">
         <div class="wrapper">
             <h1 class="view__sub__title">Blokken</h1>
-            <a href="{{ URL::to('block/create') }}" class="view__sub__button button">Bloktype toevoegen</a>
+            <a href="{{ URL::to('/blocktypes/create') }}" class="view__sub__button button">Bloktype toevoegen</a>
         </div>
         
         <div class="view__top__overlay"></div>
@@ -26,10 +26,33 @@
     </div>
 
         
+   
+        @foreach($allBlock as $block)
+            
+            @if ($block->blocktype->id == $value->id)
+                <div class="blocks__row">
+                    <div class="blocks__row__type">
+                        {{ $block->length }}
+                    </div>
+                    <div class="blocks__row__amount">
+                        Aantal blokken in magazijn: {{ $block->amount }} 
+                    </div>
+                    <form action="/blocks/add" method="post">
+                    {{ csrf_field() }}
+                        <input type="text" name="blocktypeId" value="{{$block->blocktype->id}}" hidden>
+                        <input type="text" name="length" value="{{$block->length}}" hidden>
+                        <input type="text" name="amount" value="{{$block->amount}}" hidden>
+                        <div class="blocks__row__add">
+                            <input type="submit" value="Toevoegen">
+                        </div>  
+                        
+                    </form>
+                </div>
+            @endif
+          
+        @endforeach
 
-            @foreach($allBlock as $block)
-                <br> {{ $block->amount }} van {{ $block->blocktype->block_type_name }} met lengte {{ $block->length }}
-            @endforeach
+
     <form class="form-horizontal" method="POST" action="/blocks/addLength">
         {{ csrf_field() }}
 

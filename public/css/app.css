@@ -547,11 +547,11 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 .blocks__type
 {
 	width: 100%;
-	background-color: #546E7A;
+	background-color: #37474F;
 	color: white;
 	padding: 15px;
-	margin-bottom: 20px;
 	position: relative;
+	box-sizing: border-box;
 }
 
 .blocks__button
@@ -708,4 +708,47 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin-bottom: 10px;
+}
+
+.control-label
+{
+	margin-top: 30px;
+	font-size: 12px;
+	text-transform: uppercase;
+	display: block;
+}
+
+.blocks__row
+{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	background-color: #CFD8DC;
+}
+
+.blocks__row__type
+{
+	background-color: #607D8B;
+	color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 20%;
+	max-width: 300px;
+	text-align: center;
+}
+
+.blocks__row__amount
+{
+	width: 60%;
+	text-align: right;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.blocks__row__add
+{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 10%;
+	text-align: center;
 }
