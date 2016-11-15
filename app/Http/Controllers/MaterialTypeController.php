@@ -75,4 +75,24 @@ class MaterialTypeController extends Controller
         // redirect
         return Redirect ('materialtypes');
     }
+
+    public function addOctabin($id)
+    {
+        $materialtype = Materialtypes::find($id);
+        $materialtype->increment('amount');
+
+        // redirect
+        return Redirect ('materialtypes');
+    }
+
+    public function deleteOctabin($id)
+    {
+        $materialtype = Materialtypes::find($id);
+        if ($materialtype->amount > 0) {
+            $materialtype->decrement('amount');
+        }
+
+        // redirect
+        return Redirect ('materialtypes');
+    }
 }

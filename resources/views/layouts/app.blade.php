@@ -44,7 +44,7 @@
             </li>
             @endif
             <li>
-                <a href="">
+                <a href="/materialtypes">
                     <img src="/img/materials.png" alt="Silo's">
                     <p>Grondstoffen</p>
                 </a>
