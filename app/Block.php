@@ -26,17 +26,17 @@ class Block extends Model
 			->where('block_type_id', $blockTypeId)
 			->pluck('length');
 
-		$amountPerType = DB::table('blocks')
-			->where('block_type_id', $blockTypeId)
-			->sum('amount');
-
 		$totalSize = 0;
-
-
+		
 		foreach ($lengthsPerType as $length) {
+			$amountPerType = DB::table('blocks')
+				->where('block_type_id', $blockTypeId)
+				->where('length', $length)
+				->value('amount');
+
 			$calculateSize = ($length * $amountPerType) * 1.030 * 1.29;
 
-			$totalSize =+ $calculateSize;
+			$totalSize += $calculateSize;
 		}
 
 		return $totalSize;
