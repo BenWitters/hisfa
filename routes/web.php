@@ -69,7 +69,6 @@ Route::resource('primesilo', 'PrimesiloController');
 Route::post('/materialtypes/{id}/octabin', 'MaterialTypeController@addOctabin');
 Route::delete('/materialtypes/{id}/octabin', 'MaterialTypeController@deleteOctabin');
 
-//Route::post('/materialtypes/create', 'MaterialTypeController@materialPicture');
 
 Route::get('/users/manage', function () {
     return view('users/list');
