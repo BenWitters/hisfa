@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Materialtypes extends Model
 {
     protected $fillable = [
-        'material_type_name',
-        'material_type_picture'
+        'material_type_name'
     ];
 
     protected $table = 'materialtypes';
