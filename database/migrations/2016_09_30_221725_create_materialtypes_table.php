@@ -17,6 +17,7 @@ class CreateMaterialtypesTable extends Migration
             $table->increments('id');
             $table->string('material_type_name');
             $table->string('material_type_picture')->nullable();
+            $table->integer('amount')->nullable();
             $table->timestamps();
         });
     }

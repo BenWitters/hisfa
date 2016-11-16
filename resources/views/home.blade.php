@@ -60,8 +60,7 @@
                     <div class="expand-bar">
                     
                         <div class="col-type-name">{{ $type->block_type_name }}</div>
-                        <div class="col-amount">70</div>
-                        
+                        <div class="col-amount">{{App\Block::countBlocks($type->id)}}</div>
                     </div>
                 @endforeach
 
@@ -86,10 +85,4 @@
   })     
     </script>
 @endsection
-<?php
-/*
-@foreach($allWaste as $waste)
-    <p>Silo {{ $waste->waste_silo_number }} is voor {{ $waste->waste_full_percentage }}% gevuld met {{ $waste->block_type_id }}</p>
-@endforeach
-*/
-?>
+

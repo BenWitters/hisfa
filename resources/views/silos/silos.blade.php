@@ -9,6 +9,8 @@
         <div class="view__top__overlay"></div>
    </header>
     <div class="content wrapper silos-content">
+
+        @if(Auth::user()->can_view_prime == 1)
         <h2>Primesilo's</h2>
         <div class="grid silos-grid">
             
@@ -29,7 +31,9 @@
 
         </div>
         <a href="{{ URL::to('primesilo/create') }}" class="button button--dark">Primesilo toevoegen</a>
+        @endif
 
+        @if(Auth::user()->can_view_waste == 1)
         <h2>Afvalsilo's</h2>
         <div class="grid silos-grid">
             
@@ -50,6 +54,7 @@
 
         </div>
         <a href="{{ URL::to('waste/create') }}" class="button button--dark">Afvalsilo toevoegen</a>
+        @endif
 
     </div>
 @endsection

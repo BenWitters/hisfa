@@ -547,11 +547,11 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 .blocks__type
 {
 	width: 100%;
-	background-color: #546E7A;
+	background-color: #37474F;
 	color: white;
 	padding: 15px;
-	margin-bottom: 20px;
 	position: relative;
+	box-sizing: border-box;
 }
 
 .blocks__button
@@ -674,6 +674,7 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
     height: 370px;
 }    
 
+
 @media screen and (max-width: 768px)
 {
 	.menubar
@@ -692,4 +693,82 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 		width: 100vw;
 		margin-left: 0;
 	}
+
+/* DESIGN PROFILE PAGE (ilja) */
+.inpt-field {
+	display: block;
+	width: 100%;
+	height: 35px;
+	max-width: 300px;
+}
+
+.form-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-around;
+}
+
+.form-container__item {
+	margin: 0 0 20px 0;
+	width: 100%;
+	max-width: 430px;
+}
+
+.form-container__item fieldset {
+	border: 1px solid #546E7A;
+	min-height: 300px;
+}
+
+.avatar--profile-page {
+	display: block;
+	width: 150px;
+	height: 150px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 10px;
+}
+
+.control-label
+{
+	margin-top: 30px;
+	font-size: 12px;
+	text-transform: uppercase;
+	display: block;
+}
+
+.blocks__row
+{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	background-color: #CFD8DC;
+}
+
+.blocks__row__type
+{
+	background-color: #607D8B;
+	color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 20%;
+	max-width: 300px;
+	text-align: center;
+}
+
+.blocks__row__amount
+{
+	width: 60%;
+	text-align: right;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.blocks__row__add
+{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 10%;
+	text-align: center;
 }

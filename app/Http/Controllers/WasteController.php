@@ -10,12 +10,6 @@ use App\Http\Requests;
 
 class WasteController extends Controller
 {
-//    public function index(){
-//        $allWaste = \App\Waste::all(); // select * from wastesilos
-//        $wasteData['wasteData'] = $allWaste;
-//
-//        return view('waste/waste')->with($wasteData);
-//    }
     public function index()
     {
         // get all the types
