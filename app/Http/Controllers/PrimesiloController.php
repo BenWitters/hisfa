@@ -21,7 +21,7 @@ class PrimesiloController extends Controller
 //        return view('silos/silos')->with($primesilosData);
 
         $primesilo = Primesilo::all();
-        return View('primesilo.primesilo')
+        return View('silos')
             ->with('primesilo', $primesilo);
     }
 
@@ -37,7 +37,7 @@ class PrimesiloController extends Controller
     {
         // vraagt alles -> enkel welke fillable zijn (in model)
         Primesilo::create($request->all());
-        return redirect('primesilo');
+        return redirect('silos');
     }
 
     public function show($id)

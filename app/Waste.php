@@ -11,6 +11,7 @@ class Waste extends Model
 
     protected $fillable = [
         'waste_silo_number',
+        'waste_full_percentage',
     ];
     // We zeggen hoe de tabel noemt omdat de naam van het model niet overeenkomt met de naam van de tabel
     protected $table = 'wastesilos';

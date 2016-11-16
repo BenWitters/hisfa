@@ -31,7 +31,7 @@ class WasteController extends Controller
     {
         Waste::create($request->all());
 
-        return redirect('waste');
+        return redirect('silos');
     }
 
     public function show($id)

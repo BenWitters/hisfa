@@ -33,7 +33,7 @@ class BlockTypeController extends Controller {
         // vraagt alles -> enkel welke fillable zijn (in model)
         blocktypes::create($request->all());
 
-        return redirect('blocktypes');
+        return redirect('blocks');
     }
 
     public function show($id)
