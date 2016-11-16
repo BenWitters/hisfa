@@ -21,8 +21,8 @@
     @foreach($allBlocktypes as $key => $value)
     <div class="blocks">
     <div class="blocks__type">
-
-        {{ $value->block_type_name }}
+        {{ $value->block_type_name }} |
+        {{App\Block::countBlocks($value->id)}} blokken ({{App\Block::calculateSize($value->id)}} /m&sup3)
         <div class="blocks__type__add">
             +
         </div>
@@ -35,7 +35,7 @@
             @if ($block->blocktype->id == $value->id)
                 <div class="blocks__row">
                     <div class="blocks__row__type">
-                        {{ $block->length }}
+                        {{ $block->length }}m ({{App\Block::calculateSizePerLength($block->block_type_id, $block->length)}} /m&sup3)
                     </div>
                     <div class="blocks__row__amount">
                         Aantal blokken in magazijn: {{ $block->amount }} 

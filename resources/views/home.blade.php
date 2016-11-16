@@ -60,7 +60,7 @@
                     <div class="expand-bar">
                     
                         <div class="col-type-name">{{ $type->block_type_name }}</div>
-                        <div class="col-amount">{{App\Block::countBlocks($type->id)}}</div>
+                        <div class="col-amount">{{App\Block::countBlocks($type->id)}} ({{App\Block::calculateSize($type->id)}} /m&sup3;)</div>
                     </div>
                 @endforeach
 
