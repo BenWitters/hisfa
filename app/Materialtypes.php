@@ -8,7 +8,9 @@ class Materialtypes extends Model
 {
     protected $fillable = [
         'material_type_name',
-        'amount'
+        'amount',
+        'material_type_picture'
+
     ];
 
     protected $table = 'materialtypes';

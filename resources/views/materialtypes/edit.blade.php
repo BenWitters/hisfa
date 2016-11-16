@@ -39,6 +39,36 @@
 
     {!! Form::close() !!}
 
+            <!--============ Picture ==============-->
+    <form class="form-horizontal form-container__item" method="POST" action="/materialtypes/materialPicture" enctype="multipart/form-data">
+        {{ csrf_field() }}
+
+        <fieldset>
+            <h2>Materialtype foto</h2>
+
+            <!--<div class="avatar--profile-page" style="background-image: url(img/profilePictures/<?php echo Auth()->user()->material_type_picture; ?>)"></div>
+-->
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="newMaterialTypePicture">Profielfoto</label>
+                <div class="col-md-4">
+                    <input id="newMaterialTypePicture" name="material_type_picture" type="file"class="form-control" required="" accept="image/*;capture=camera">
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="btnsave"></label>
+                <div class="col-md-4">
+                    <button id="btnsave" name="btnsave" class="button button--dark">Wijzig profielfoto</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+    <!--=========== einde picture =============-->
+
 </div>
 </body>
 </html>

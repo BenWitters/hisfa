@@ -32,7 +32,6 @@ class MaterialTypeController extends Controller
     {
         // vraagt alles -> enkel welke fillable zijn (in model)
         materialtypes::create($request->all());
-
         return redirect('materialtypes');
     }
 
@@ -66,6 +65,8 @@ class MaterialTypeController extends Controller
         $blocktypes->block_type_name      = Request::get('block_type_name');
         $blocktypes->save();
         return Redirect('blocktypes');
+
+
     }
 
     public function destroy($id)
@@ -96,4 +97,6 @@ class MaterialTypeController extends Controller
         // redirect
         return Redirect ('materialtypes');
     }
+
+
 }
