@@ -33,10 +33,10 @@
             @if ($block->blocktype->id == $value->id)
                 <div class="blocks__row">
                     <div class="blocks__row__type">
-                        {{ $block->length }}m ({{App\Block::calculateSizePerLength($block->block_type_id, $block->length)}} /m&sup3)
+                        {{ $block->length }}m
                     </div>
                     <div class="blocks__row__amount">
-                        Aantal blokken in magazijn: {{ $block->amount }} 
+                        {{ $block->amount }} blokken ({{App\Block::calculateSizePerLength($block->block_type_id, $block->length)}} /m&sup3)
                     </div>
                     <form action="/blocks/add" method="post">
                     {{ csrf_field() }}
