@@ -27,20 +27,20 @@
             <li>
                 <a href="/silos">
 
-                    <img src="img/silo.png" alt="Silo's">
+                    <img src="/img/silo.png" alt="Silo's">
                     <p>Silo's</p>
                     
                 </a>
             </li>
             <li>
                 <a href="/blocks">
-                    <img src="img/blocks.png" alt="Silo's">
+                    <img src="/img/blocks.png" alt="Silo's">
                     <p>Blokken</p>
                 </a>
             </li>
             <li>
                 <a href="">
-                    <img src="img/materials.png" alt="Silo's">
+                    <img src="/img/materials.png" alt="Silo's">
                     <p>Grondstoffen</p>
                 </a>
             </li>
@@ -48,7 +48,7 @@
 
             <li>
                 <a href="/manageaccounts">
-                    <img src="img/user.png" alt="Silo's">
+                    <img src="/img/user.png" alt="Silo's">
                     <p>Gebruikers</p>
                 </a>
             </li>

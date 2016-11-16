@@ -1,13 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Instellingen voor {{$user->name}}</h1>
-
+        <header class="view__sub users">
+            <div class="wrapper">
+                <h1 class="view__sub__title">Accountinstellingen</h1>
+            </div>
+            
+            <div class="view__top__overlay"></div>
+        </header>
+        <div class="wrapper content">
+        <h2>Permissies</h2>
     <!-- set notification -->
     <form class="form-horizontal" method="POST" action="/manageaccounts/updateAccountSettings">
         {{ csrf_field() }}
 
-        <fieldset>
             <div class="form-group">
                 <div class="col-md-4">
                     <input name="id" type="hidden" value="{{ $user->id }}" class="form-control input-md">
@@ -114,11 +120,10 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="singlebutton"></label>
                 <div class="col-md-4">
-                    <button class="btn btn-primary">Bewaar account instellingen</button>
+                    <button class="button button--dark">Bewaar account instellingen</button>
                 </div>
             </div>
 
-        </fieldset>
     </form>
 @endsection
 
