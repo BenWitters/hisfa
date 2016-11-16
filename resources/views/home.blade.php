@@ -82,6 +82,11 @@
     // Navigation arrows
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
+    breakpoints: {
+        768: {
+          slidesPerView: 1,
+        }
+    }
   })     
     </script>
 @endsection
