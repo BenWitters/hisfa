@@ -27,8 +27,6 @@
             +
         </div>
     </div>
-
-        
    
         @foreach($allBlock as $block)
             
@@ -47,8 +45,7 @@
                         <input type="text" name="amount" value="{{$block->amount}}" hidden>
                         <div class="blocks__row__add">
                             <input type="submit" value="Toevoegen">
-                        </div>  
-                        
+                        </div>   
                     </form>
                 </div>
             @endif

@@ -58,9 +58,9 @@
                 </a>
             </li>
             @endif
-        </ul>
-        <div class="menubar__user">
-            <div class="menubar__user__avatar" style="background-image: url(<?php echo Auth()->user()->profile_picture; ?>)"></div>
+            <li class="menubar__user">
+           
+            <div class="menubar__user__avatar" style="background-image: url(/img/profilePictures/<?php echo Auth()->user()->profile_picture; ?>)"></div>
             <div class="menubar__user__sub">
                 <ul>
                     <a href="/account"><li>Profiel wijzigen</li></a>
@@ -68,11 +68,16 @@
                 </ul>
             </div>
             <div class="menubar__user__overlay"></div>
+   
+ 
+            </li>
+        </ul>
+               <div class="nav-toggle">
+            <img src="/img/menu.png" alt="Menu">
         </div>
-        <a class="menubar__user" href="/account">
-            <div class="menubar__user__avatar" style="background-image: url(/img/profilePictures/<?php echo Auth()->user()->profile_picture; ?>)"></div>
-        </a>
     </nav>
+
+
     <div class="container view">
     @yield('content')
 
@@ -84,6 +89,11 @@
             $(".menubar__user__sub").toggle();
             $(".menubar__user__overlay").toggle();
         });
+
+        $(".nav-toggle").click(function(){
+            $(".menubar ul").toggle();
+        });
+
     </script>
 </body>
 </html>
