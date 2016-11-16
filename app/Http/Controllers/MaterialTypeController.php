@@ -58,6 +58,7 @@ class MaterialTypeController extends Controller
         // store
         $materialtypes = Materialtypes::find($id);
         $materialtypes->material_type_name      = Request::get('material_type_name');
+        $materialtypes->amount = Request::get('amount');
         $materialtypes->save();
         return Redirect('materialtypes');
 

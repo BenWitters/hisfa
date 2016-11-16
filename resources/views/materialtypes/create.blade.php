@@ -28,6 +28,11 @@
     </div>
 
     <div class="form-group">
+        {!! Form::label('amount', 'Amount:') !!}
+        {!! Form::text('amount', 0, ['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
         {!! Form::submit('Add materialtype', ['class' => 'btn btn-primary form-control']) !!}
     </div>
 

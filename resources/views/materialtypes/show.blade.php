@@ -22,6 +22,10 @@
         <h2>{{ $materialtypes->material_type_name }}</h2>
     </div>
 
+    <div class="jumbotron text-center">
+        <h2>{{ $materialtypes->amount }}</h2>
+    </div>
+
 </div>
 </body>
 </html>
