@@ -17,8 +17,8 @@ class CreatePrimesilosTable extends Migration
             $table->increments('id');
             $table->integer('prime_silo_number')->unique();
             $table->integer('prime_full_percentage');
-            $table->integer('material_id')->unsigned();
-            $table->foreign('material_id')->references('id')->on('materialtypes');
+//            $table->integer('material_id')->unsigned();
+//            $table->foreign('material_id')->references('id')->on('materialtypes');
             $table->timestamps();
         });
     }

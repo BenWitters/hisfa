@@ -5,7 +5,10 @@
     <header class="view__sub blocks">
         <div class="wrapper">
             <h1 class="view__sub__title">Blokken</h1>
+
             <a href="{{ URL::to('/blocktypes/create') }}" class="view__sub__button button">Bloktype toevoegen</a>
+            <a href="{{ URL::to('blocktypes/create') }}" class="view__sub__button button">Bloktype toevoegen</a>
+
         </div>
         
         <div class="view__top__overlay"></div>

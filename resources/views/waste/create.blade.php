@@ -26,6 +26,10 @@
         {!! Form::label('waste_silo_number', 'Waste Silo number:') !!}
         {!! Form::text('waste_silo_number', null, ['class' => 'form-control']) !!}
     </div>
+    <div class="form-group">
+        {!! Form::label('waste_full_percentage', 'Waste Full Percentage:') !!}
+        {!! Form::text('waste_full_percentage', 0, ['class' => 'form-control']) !!}
+    </div>
 
     <div class="form-group">
         {!! Form::submit('Add Waste Silo', ['class' => 'btn btn-primary form-control']) !!}
