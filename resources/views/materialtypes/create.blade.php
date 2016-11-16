@@ -26,10 +26,12 @@
         {!! Form::label('material_type_name', 'Materialtype:') !!}
         {!! Form::text('material_type_name', null, ['class' => 'form-control']) !!}
     </div>
+    {!! Form::file('material_type_picture') !!}
 
     <div class="form-group">
         {!! Form::submit('Add materialtype', ['class' => 'btn btn-primary form-control']) !!}
     </div>
+
 
     {!! Form::close() !!}
 
@@ -40,10 +42,6 @@
             @endforeach
         </ul>
     @endif
-
-
-
-
 
     @section('footerscripts')
 
