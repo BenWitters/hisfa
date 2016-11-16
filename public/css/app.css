@@ -674,4 +674,22 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
     height: 370px;
 }    
 
-  
+@media screen and (max-width: 768px)
+{
+	.menubar
+	{
+		height: 60px;
+		width: 100vw;
+	}
+
+	.menubar ul
+	{
+		display: none;
+	}
+
+	.container
+	{
+		width: 100vw;
+		margin-left: 0;
+	}
+}
