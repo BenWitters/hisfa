@@ -54,7 +54,7 @@
             </li>
         </ul>
         <div class="menubar__user">
-            <div class="menubar__user__avatar" style="background-image: url(<?php echo Auth()->user()->profile_picture; ?>)"></div>
+            <div class="menubar__user__avatar" style="background-image: url(/<?php echo Auth()->user()->profile_picture; ?>)"></div>
             <div class="menubar__user__sub">
                 <ul>
                     <a href="/account"><li>Profiel wijzigen</li></a>
