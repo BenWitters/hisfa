@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Materialtypes;
 use Request;
 use Input;
+use Intervention\Image\Facades\Image;
 
 use App\Http\Requests;
 
