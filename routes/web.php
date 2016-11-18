@@ -46,6 +46,7 @@ Route::resource('waste', 'WasteController');
 // blocks
 Route::get('/blocks', 'BlockController@index')->middleware(Authenticate::class);
 Route::post('/blocks/add', 'BlockController@addBlock');
+Route::post('/blocks/remove', 'BlockController@removeBlock');
 Route::post('/blocks/addLength', 'BlockController@addLength');
 Route::get('/blocktypes/create', "BlockTypeController@create");
 
