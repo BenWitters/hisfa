@@ -27,12 +27,12 @@
             +
         </div>
     </div>
-   
+
         @foreach($allBlock as $block)
-            
+
             @if ($block->blocktype->id == $value->id)
                 <div class="blocks__row">
-                    <div class="blocks__row__type">
+                    <div class="blocks__row__type" >
                         {{ $block->length }}m
                     </div>
                     <div class="blocks__row__amount">
@@ -61,7 +61,6 @@
 
                 </div>
             @endif
-          
         @endforeach
 
 
@@ -108,5 +107,4 @@
         $(this).parent().parent().find(".blocks__add").toggle();
     });
     </script>
-
 @endsection
