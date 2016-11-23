@@ -655,6 +655,7 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 	background-color: #F44336;
 	font-size: 12px;
 	display: flex;
+	z-index: 1;
 	align-items: center;
 	justify-content: center;
 	color: white;

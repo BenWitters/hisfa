@@ -19,13 +19,12 @@
                         <p class="silos-grid__col__id">Silo @{{ prime.prime_silo_number  }}</p>
                         <p class="silos-grid__col__percentage">@{{ prime.prime_full_percentage}}%</p>
                     </div>
-                    <div class="silos-grid__col__alert" v-if="prime.prime_full_percentage >= 80">!</div>
+                    <div class="silos-grid__col__alert" v-if="prime.prime_full_percentage >= 90">!</div>
 
                     <div class="silos-grid__col__fill" v-bind:style="{height: prime.prime_full_percentage + '%'}"></div>
 
                 </div>
 
-    
 
         </div>
         <a href="{{ URL::to('primesilo/create') }}" class="button button--dark">Primesilo toevoegen</a>
@@ -41,7 +40,7 @@
                         <p class="silos-grid__col__id">Silo @{{ waste.waste_silo_number  }}</p>
                         <p class="silos-grid__col__percentage">@{{ waste.waste_full_percentage}}%</p>
                     </div>
-                    <div class="silos-grid__col__alert" v-if="waste.waste_full_percentage >= 80">!</div>
+                    <div class="silos-grid__col__alert" v-if="waste.waste_full_percentage >= 90">!</div>
                     <div class="silos-grid__col__fill" v-bind:style="{height: waste.waste_full_percentage + '%'}"></div>
                 </div>
                 
