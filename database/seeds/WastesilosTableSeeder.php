@@ -26,11 +26,6 @@ class WastesilosTableSeeder extends Seeder
                 'waste_silo_number' => 3,
                 'waste_full_percentage' => 55,
                 'block_type_id' => 3
-            ],
-            [
-                'waste_silo_number' => 3,
-                'waste_full_percentage' => 27,
-                'block_type_id' => 5
             ]
 
         ];
