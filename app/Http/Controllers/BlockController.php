@@ -45,4 +45,14 @@ class BlockController extends Controller
         return Redirect('blocks');
     }
 
+    public function removeBlock(Request $request)
+    {
+        $length = $request->input('length');
+        $blockTypeId = $request->input('blocktypeId');
+        $amount = $request->input('amount');
+        if($amount > 0){
+            Block::where([['block_type_id', '=', $blockTypeId], ['length', '=', $length]])->update(array('amount' => $amount-1));
+        }
+        return Redirect('blocks');
+    }
 }

@@ -46,6 +46,7 @@ Route::resource('waste', 'WasteController');
 // blocks
 Route::get('/blocks', 'BlockController@index')->middleware(Authenticate::class);
 Route::post('/blocks/add', 'BlockController@addBlock');
+Route::post('/blocks/remove', 'BlockController@removeBlock');
 Route::post('/blocks/addLength', 'BlockController@addLength');
 Route::get('/blocktypes/create', "BlockTypeController@create");
 
@@ -88,3 +89,7 @@ Route::get('/account/logout', "UserController@logout");
 Route::post('/account/updatePassword', "UserController@updatePassword");
 Route::post('/account/updateProfilePicture', "UserController@changeProfilePicture");
 Route::post('/account/updateNotificationSettings', 'UserController@updateNotificationSettings');
+
+// vuejs prime & waste
+Route::get('/api/v1/primesilos', 'api\v1\PrimeSiloController@index');
+Route::get('/api/v1/wastesilos', 'api\v1\WasteSiloController@index');
