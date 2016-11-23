@@ -406,6 +406,41 @@ background: linear-gradient(to left, #4776E6 , #8E54E9); /* W3C, IE 10+/ Edge, F
 	box-shadow: 0px 0px 52px -4px rgba(0,0,0,0.75);
 }
 
+.block__add{
+	padding: 8px 18px;
+	background: transparent;
+	border: 2px solid white;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	transition: all 0.2s ease-in-out;
+	text-decoration: none;
+	margin-top: 1px;
+	height: 95%;
+	margin-right: 2px;
+}
+
+.block__remove{
+	padding: 4px 18px 10px 18px;
+	background: transparent;
+	border: 2px solid white;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	transition: all 0.2s ease-in-out;
+	text-decoration: none;
+	margin-top: 1px;
+	height: 95%;
+}
+
+.block__btn:hover{
+
+	background-color: white;
+	color: gray;
+	transition: all 0.2s ease-in-out;
+
+}
+
 .signin__lostpw
 {
 	display: block;
@@ -567,6 +602,14 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 	margin-top: 50px;
 	margin-bottom: 50px;
 	font-size: 12px;
+}
+
+.button--block
+{
+	border-color: #546E7A;
+	color: #546E7A;
+	font-size: 30px;
+
 }
 
 .blocks__add
@@ -857,8 +900,8 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 
 .blocks__row__amount
 {
-	width: 60%;
-	text-align: right;
+	width: 100%;
+	text-align: center;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
