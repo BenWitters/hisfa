@@ -27,7 +27,7 @@
         </div>
 
         <div class="form-group">
-            {!! Form::submit('Add materialtype', ['class' => 'btn btn-primary form-control']) !!}
+            {!! Form::submit('Grondstof toevoegen', ['class' => 'button button--dark']) !!}
         </div>
 
 

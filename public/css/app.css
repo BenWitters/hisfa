@@ -943,6 +943,8 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 	text-align: center;
 	overflow: hidden;
 	color: #fff;
+	display: block;
+	text-decoration: none;
 }
 
 .grondstofitem__header__overlay
