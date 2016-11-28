@@ -916,3 +916,61 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 }
 
 
+/* GRONDSTOFFEN */
+
+.wrapper--grondstoffen
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.grondstofitem
+{
+	display: block;
+	background-color: #CFD8DC;
+	width: 100%;
+	max-width: 320px;
+	margin-bottom: 40px;
+}
+
+.grondstofitem__header
+{
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	overflow: hidden;
+	color: #fff;
+	display: block;
+	text-decoration: none;
+}
+
+.grondstofitem__header__overlay
+{
+	overflow: hidden;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	padding-bottom: 20px;
+}
+
+.grondstofitem__header__overlay:hover
+{
+	background: rgba(0,0,0,0.0);
+}
+
+.grondstofitem__title
+{
+	font-size: 3.3em;
+}
+
+.grondstofitem__amount
+{
+	font-size: 3em;
+}
+
+.btnOctabin {
+	width: 100%;
+	height: 50px;
+	margin: 0;
+}
