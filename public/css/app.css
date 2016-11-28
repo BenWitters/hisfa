@@ -937,7 +937,6 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 
 .grondstofitem__header
 {
-	background-image: url("http://www.hisfa.be/hisfa.JPG");
 	background-repeat: no-repeat;
 	background-size: cover;
 	text-align: center;

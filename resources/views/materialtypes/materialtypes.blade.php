@@ -18,7 +18,7 @@
 
             @foreach($materialtypes as $key => $value)
             <div class="grondstofitem">
-                <a class="grondstofitem__header" href="{{ URL::to('materialtypes/' . $value->id . '/edit') }}">
+                <a class="grondstofitem__header" href="{{ URL::to('materialtypes/' . $value->id . '/edit') }}" style="background-image: url(/img/grondstoffen/{{ $value->material_type_picture }})">
                     <div class="grondstofitem__header__overlay">
                         <h2 class="grondstofitem__title">{{ $value->material_type_name }}</h2>
                         <span class="grondstofitem__amount"><span class="grondstofitem__amount__count">{{ $value->amount }}</span> ton</span>
