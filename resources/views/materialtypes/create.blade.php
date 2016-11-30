@@ -26,11 +26,14 @@
         {!! Form::label('material_type_name', 'Materialtype:') !!}
         {!! Form::text('material_type_name', null, ['class' => 'form-control']) !!}
     </div>
-    {!! Form::file('material_type_picture') !!}
-
-    <div class="form-group">
+        <div class="form-group">
         {!! Form::label('amount', 'Amount:') !!}
         {!! Form::text('amount', 0, ['class' => 'form-control']) !!}
+    </div>
+
+    <div>
+        {!! Form::label('material_type_picture', 'Material picture:') !!}
+        {!! Form::file('material_type_picture', ['class' => 'form-control'], ['accept' => 'image/*;capture=camera'], ['id' => 'materialPicture']) !!}
     </div>
 
     <div class="form-group">

@@ -35,13 +35,16 @@
                 <td>{{ $value->id }}</td>
                 <td>{{ $value->material_type_name }}</td>
 
-
+                <td><img src="/img/materialPictures/{{$value->material_type_picture}}" alt="" class="imageMaterialtype" style="width: 50px; height:50px; "></td>
                 <td>
                     <!-- show  -->
                     <a class="btn btn-small btn-success" href="{{ URL::to('materialtypes/' . $value->id) }}">Show this Materialtype</a>
 
                     <!-- edit -->
                     <a class="btn btn-small btn-info" href="{{ URL::to('materialtypes/' . $value->id . '/edit') }}">Edit this Materialtype</a>
+
+                    <!-- add photo -->
+                    <a class="btn btn-small btn-info" href="{{ URL::to('materialtypes/' . $value->id . '/photo') }}">Add photo</a>
                 </td>
                 <td>
                     <!-- Octabins -->

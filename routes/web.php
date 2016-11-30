@@ -75,6 +75,8 @@ Route::get('/users/manage', function () {
     return view('users/list');
 });
 
+Route:: get('materialtypes/{id}/photo', 'MaterialTypeController@photo');
+Route:: post('materialtypes/{id}/photo', 'MaterialTypeController@addPhoto');
 
 // manage account routes
 Route::get('/manageaccounts', 'ManageAccountController@index')->middleware(Authenticate::class, IsAdmin::class);

@@ -916,3 +916,7 @@ background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, F
 }
 
 
+.imageMaterialtype{
+	width: 40px;
+	height: 40px;
+}
