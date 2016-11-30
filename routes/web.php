@@ -65,6 +65,9 @@ Route::resource('waste', 'WasteController');
 Route::resource('materials', 'MaterialController');
 Route::resource('primesilo', 'PrimesiloController');
 
+Route:: get('materialtypes/{id}/photo', 'MaterialTypeController@photo');
+Route:: post('materialtypes/{id}/photo', 'MaterialTypeController@addPhoto');
+
 
 //octabins
 Route::post('/materialtypes/{id}/octabin', 'MaterialTypeController@addOctabin');

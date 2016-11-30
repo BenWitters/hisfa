@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Materialtypes;
-use Request;
 use Input;
 use Intervention\Image\Facades\Image;
-
+use App\Materialtypes;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Mockery\CountValidator\Exception;
+use Symfony\Component\CssSelector\Exception\ExpressionErrorException;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
 
 class MaterialTypeController extends Controller
@@ -35,6 +38,52 @@ class MaterialTypeController extends Controller
         materialtypes::create($request->all());
         return redirect('materialtypes');
     }
+
+    public function addPhoto(Request $request, $id){
+        //rules
+        $pictureSelected = array(
+            'material_type_picture' => 'required',
+        );
+        $requiredValidation = Validator::make($request->all(), $pictureSelected);
+        $validPicture = array(
+            'material_type_picture' => 'mimes:jpeg,jpg,png',
+        );
+        // if the user hasn't selected a photo
+        if ($requiredValidation->fails()) {
+            $feedback = "error";
+            $message = "Geen foto geselecteerd";
+        } else
+            if ($request->hasFile('material_type_picture')) {
+                // get the file that was selected
+                $newMaterialPic = $request->file('material_type_picture');
+                // check if the file is an image
+                $imageValidation = Validator::make($request->all(), $validPicture);
+                if($imageValidation->fails()) {
+                    $feedback = "error";
+                    $message = "Het geselecteerde bestand is geen geldige foto.";
+                } else {
+                    // create unique name for new image
+                    $filename = time() . '.' . $newMaterialPic->getClientOriginalExtension();
+                    // save the image to folder
+                    Image::make($newMaterialPic)->save(base_path('public/img/grondstoffen/' . $filename));
+                    // save the image to the database
+                    $materialtypes = Materialtypes::find($id);
+                    $materialtypes->material_type_picture      = $filename;
+                    $materialtypes->save();
+                    $feedback = "success";
+                    $message = "Materialfoto is gewijzigd";
+                }
+            }
+        return redirect('/materialtypes')->with($feedback, $message);
+    }
+
+    public function photo($id)
+    {
+        $materialtypes = Materialtypes::find($id);
+        return View('materialtypes.photo')
+            ->with('materialtypes', $materialtypes);
+    }
+
 
     public function show($id)
     {

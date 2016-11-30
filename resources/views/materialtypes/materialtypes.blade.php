@@ -23,7 +23,8 @@
                         <h2 class="grondstofitem__title">{{ $value->material_type_name }}</h2>
                         <span class="grondstofitem__amount"><span class="grondstofitem__amount__count">{{ $value->amount }}</span> ton</span>
                     </div>
-                </a>
+                       </a>
+                <a class="btn btn-small btn-info" href="{{ URL::to('materialtypes/' . $value->id . '/photo') }}">Add photo</a>
                 <div class="grondstofitem__action">
                     <!-- Add octabin -->
                     {!! Form::open(array('url' => 'materialtypes/' . $value->id . '/octabin', 'class' => 'pull-right')) !!}

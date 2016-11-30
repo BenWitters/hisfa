@@ -19,7 +19,6 @@
             {!! Form::label('material_type_name', 'Materialtype:') !!}
             {!! Form::text('material_type_name', null, ['class' => 'form-control']) !!}
         </div>
-        {!! Form::file('material_type_picture') !!}
 
         <div class="form-group">
             {!! Form::label('amount', 'Amount:') !!}
