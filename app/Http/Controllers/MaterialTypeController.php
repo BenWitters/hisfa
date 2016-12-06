@@ -130,11 +130,18 @@ class MaterialTypeController extends Controller
 
     public function addOctabin($id)
     {
-        $materialtype = Materialtypes::find($id);
+        /*$materialtype = Materialtypes::find($id);
         $materialtype->increment('amount');
 
         // redirect
-        return Redirect ('materialtypes');
+        return Redirect ('materialtypes');*/
+
+        $materialtype = Materialtypes::find($id);
+        $materialtype->increment('amount');
+
+        return response()->json([
+            'status' => 'success'
+        ]);
     }
 
     public function deleteOctabin($id)
@@ -142,10 +149,17 @@ class MaterialTypeController extends Controller
         $materialtype = Materialtypes::find($id);
         if ($materialtype->amount > 0) {
             $materialtype->decrement('amount');
+            return response()->json([
+                'status' => 'success'
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'error'
+            ]);
         }
 
         // redirect
-        return Redirect ('materialtypes');
+        //return Redirect ('materialtypes');
     }
 
 

@@ -29,12 +29,12 @@
                     <!-- Add octabin -->
                     {!! Form::open(array('url' => 'materialtypes/' . $value->id . '/octabin', 'class' => 'pull-right')) !!}
                     {!! Form::hidden('_method', 'POST') !!}
-                    {!! Form::submit('+1 octabin', array('class' => 'btnOctabin btnoctabin--add button button--dark')) !!}
+                    {!! Form::submit('+1 octabin', array('class' => 'btnOctabin btnOctabin--add button button--dark', 'data-id' => $value->id )) !!}
                     {!! Form::close() !!}
                     <!-- Delete octabin -->
                     {!! Form::open(array('url' => 'materialtypes/' . $value->id . '/octabin', 'class' => 'pull-right')) !!}
                     {!! Form::hidden('_method', 'DELETE') !!}
-                    {!! Form::submit('-1 octabin', array('class' => 'btnOctabin btnOctabin--delete button button--dark')) !!}
+                    {!! Form::submit('-1 octabin', array('class' => 'btnOctabin btnOctabin--delete button button--dark', 'data-id' => $value->id )) !!}
                     {!! Form::close() !!}
                 </div>
             </div>

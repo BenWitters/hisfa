@@ -84,6 +84,10 @@
     <!-- Scripts -->
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
     <script>
         $(".menubar__user").click(function(){
             $(".menubar__user__sub").toggle();
@@ -95,5 +99,6 @@
         });
 
     </script>
+    <script src="/js/interactions.js"></script>
 </body>
 </html>
