@@ -65,9 +65,10 @@ Route::resource('waste', 'WasteController');
 Route::resource('materials', 'MaterialController');
 Route::resource('primesilo', 'PrimesiloController');
 
+Route::resource('primesilo/{id}/edit', 'PrimesiloController@edit');
+
 Route:: get('materialtypes/{id}/photo', 'MaterialTypeController@photo');
 Route:: post('materialtypes/{id}/photo', 'MaterialTypeController@addPhoto');
-
 
 //octabins
 Route::post('/materialtypes/{id}/octabin', 'MaterialTypeController@addOctabin');
@@ -77,7 +78,6 @@ Route::delete('/materialtypes/{id}/octabin', 'MaterialTypeController@deleteOctab
 Route::get('/users/manage', function () {
     return view('users/list');
 });
-
 
 // manage account routes
 Route::get('/manageaccounts', 'ManageAccountController@index')->middleware(Authenticate::class, IsAdmin::class);

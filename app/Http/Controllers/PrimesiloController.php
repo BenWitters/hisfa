@@ -7,6 +7,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Input;
 use App\Primesilo;
+use App\Materialtypes;
 
 
 
@@ -20,8 +21,9 @@ class PrimesiloController extends Controller
 //
 //        return view('silos/silos')->with($primesilosData);
 
-        $primesilo = Primesilo::all();
-        return View('silos')
+        // $primesilo = Primesilo::all();
+        $primesilo = Primesilo::with('material')->get();
+        return View('silos/silos')
             ->with('primesilo', $primesilo);
     }
 
@@ -37,7 +39,7 @@ class PrimesiloController extends Controller
     {
         // vraagt alles -> enkel welke fillable zijn (in model)
         Primesilo::create($request->all());
-        return redirect('silos');
+        return redirect('silos/silos');
     }
 
     public function show($id)
@@ -51,9 +53,10 @@ class PrimesiloController extends Controller
     public function edit($id)
     {
         $primesilo = primesilo::find($id);
+        $materials = Materialtypes::pluck('material_type_name', 'id');
 
         return View('primesilo.edit')
-            ->with('primesilo', $primesilo);
+            ->with(array("primesilo" => $primesilo, 'materials' => $materials->toArray()));
     }
 
 
@@ -63,12 +66,11 @@ class PrimesiloController extends Controller
         $primesilo = Primesilo::find($id);
         $primesilo->prime_silo_number      = Request::get('prime_silo_number');
         $primesilo->prime_full_percentage      = Request::get('prime_full_percentage');
+        $primesilo->material_id      = Request::get('prime_material_id');
         $primesilo->save();
         return Redirect('primesilo');
-
-
-
     }
+
 
     public function destroy($id)
     {

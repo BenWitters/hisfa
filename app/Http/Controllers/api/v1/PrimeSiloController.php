@@ -10,6 +10,6 @@ use App\Http\Controllers\Controller;
 class PrimeSiloController extends Controller
 {
     public function index(){
-        return \App\Primesilo::all();
+        return \App\Primesilo::with('material')->get();
     }
 }

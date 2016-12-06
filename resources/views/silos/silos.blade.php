@@ -13,19 +13,20 @@
         @if(Auth::user()->can_view_prime == 1)
         <h2>Primesilo's</h2>
         <div class="grid silos-grid">
-            
-                <div class="col" v-for="prime in primes">
-                    <div class="wrapper">
-                        <p class="silos-grid__col__id">Silo @{{ prime.prime_silo_number  }}</p>
-                        <p class="silos-grid__col__percentage">@{{ prime.prime_full_percentage}}%</p>
-                    </div>
-                    <div class="silos-grid__col__alert" v-if="prime.prime_full_percentage >= 90">!</div>
+     
+                <a href="" class="col" v-for="prime in primes">
+             
+                        <div class="wrapper">
+                            <p class="silos-grid__col__id">Silo @{{ prime.prime_silo_number  }}</p>
+                            <p class="silos-grid__col__percentage">@{{ prime.prime_full_percentage}}%</p>
+                            <!-- <p class="silos-grid__col__id">@{{ prime.material_id->material->material_type_name }}</p> -->
+                        </div>
+                        <div class="silos-grid__col__alert" v-if="prime.prime_full_percentage >= 90">!</div>
 
-                    <div class="silos-grid__col__fill" v-bind:style="{height: prime.prime_full_percentage + '%'}"></div>
+                        <div class="silos-grid__col__fill" v-bind:style="{height: prime.prime_full_percentage + '%'}"></div>
 
-                </div>
-
-
+                </a>
+           
         </div>
         <a href="{{ URL::to('primesilo/create') }}" class="button button--dark">Primesilo toevoegen</a>
 
