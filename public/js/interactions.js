@@ -38,7 +38,10 @@ $(document).ready(function() {
             type: 'DELETE',
             success: function(result) {
                 console.log('Success');
-                $(counter).text(+counter.text() - 1);
+                if(+counter.text() > 0){
+                    $(counter).text(+counter.text() - 1);
+
+                }
             },
             error: function (result) {
                 console.log('Error');
