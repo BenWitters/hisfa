@@ -28,6 +28,7 @@
         </div>
     </div>
 
+
         @foreach($allBlock as $block)
 
             @if ($block->blocktype->id == $value->id)
@@ -69,28 +70,15 @@
 
 
                 <div class="blocks__add">
-                    <h2>Nieuwe lengte toevoegen</h2>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="length">Lengte: </label>
-                        <div class="col-md-4">
-                            <input id="length" name="length" type="text" placeholder="Block Length" class="form-control input-md" required="">
+                    <div class="blocks__type-grey">
+                        Lengte toevoegen
 
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="blockTypeId"></label>
-                        <div class="col-md-4">
+                            <input id="length" name="length" type="text" pattern="[0-9]+([\.][0-9]+)?" title="Vul hier enkel cijfers in, bij het invoeren van kommagetallen, maak gebruik van een . om cijfers te scheiden."  placeholder="Block Length" class="form-control input-md" required="">
                             <input value="{{ $value->id }}" id="blockTypeId" name="blockTypeId" type="hidden" class="form-control input-md" required="">
 
-                </div>
+                            <button id="btnsave" name="btnsave" class="blocks__button-add button">Toevoegen</button>
 
-            </div>
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="btnsave"></label>
-                <div class="col-md-4">
-                    <button id="btnsave" name="btnsave" class="blocks__button button">Toevoegen</button>
-                </div>
-            </div>
+                    </div>
 
         </div>
 
@@ -103,8 +91,18 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-    $(".blocks__type__add").click(function(){
+        var counter = 0;
+
+        $(".blocks__type__add").click(function(){
+
         $(this).parent().parent().find(".blocks__add").toggle();
+        if(counter == 0 ){
+            $(this).parent().parent().find(".blocks__row").attr('style', 'display: -webkit-flex; display: flex');
+            counter ++;
+        }else{
+            $(this).parent().parent().find(".blocks__row").attr('style', 'display: none;');
+            counter--;
+        }
     });
     </script>
 @endsection
