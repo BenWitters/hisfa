@@ -96,13 +96,8 @@
         $(".blocks__type__add").click(function(){
 
         $(this).parent().parent().find(".blocks__add").toggle();
-        if(counter == 0 ){
             $(this).parent().parent().find(".blocks__row").attr('style', 'display: -webkit-flex; display: flex');
-            counter ++;
-        }else{
-            $(this).parent().parent().find(".blocks__row").attr('style', 'display: none;');
-            counter--;
-        }
-    });
+
+        });
     </script>
 @endsection
