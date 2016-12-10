@@ -52,4 +52,67 @@ $(document).ready(function() {
 
 
 
+
+
+    // BLOCK TOEVOEGEN
+    $(".block__add").on("click", function(e){
+        var form = $(this).closest('form');
+        var counter = $(this).closest('.blocks__row').find('.blocks__row__amount__count');
+        var id = $(this).attr("data-id");
+        console.log(id);
+
+        $.ajax({
+            url: "blocks/add",
+            type: 'POST',
+            data: $(form).serialize(),
+            success: function(result) {
+                console.log('Success');
+                $(counter).text(+counter.text() + 1);
+                var inputAmount = $(form).find('[name=amount]');
+                console.log(inputAmount.val());
+                $(inputAmount).val(+inputAmount.val() + 1);
+                console.log(inputAmount.val());
+
+            },
+            error: function (result) {
+                console.log('Error');
+            }
+        });
+
+        e.preventDefault();
+    });
+
+    // BLOCK VERWIJDEREN
+    $(".block__remove").on("click", function(e){
+        var form = $(this).closest('form');
+        var counter = $(this).closest('.blocks__row').find('.blocks__row__amount__count');
+        var id = $(this).attr("data-id");
+        console.log(id);
+
+        $.ajax({
+            url: "blocks/remove",
+            type: 'POST',
+            data: $(form).serialize(),
+            success: function(result) {
+                console.log('Success');
+                if(+counter.text() > 0){
+                    $(counter).text(+counter.text() - 1);
+                    var inputAmount = $(form).find('[name=amount]');
+                    console.log(inputAmount.val());
+                    $(inputAmount).val(+inputAmount.val() - 1);
+                    console.log(inputAmount.val());
+                }
+            },
+            error: function (result) {
+                console.log('Error');
+            }
+        });
+
+        e.preventDefault();
+    });
+
+
+
+
+
 });
