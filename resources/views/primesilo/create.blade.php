@@ -1,25 +1,16 @@
-<html>
-<head>
-    <title>Create new PrimeSilo</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@extends('layouts.app')
 
-    <nav class="navbar navbar-inverse">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="{{ URL::to('primesilo') }}">PrimeSilo</a>
+@section('content')
+    <header class="view__sub silos" >
+        <div class="wrapper">
+            <span class="view__sub__breadcrumb">Silo's</span>
+            <a class="view__sub__back" href="/silos">BACK</a>
+            <h1 class="view__sub__title">Primesilo toevoegen</h1>
         </div>
-        <ul class="nav navbar-nav">
-            <li><a href="{{ URL::to('primesilo') }}">View All The PrimeSilos</a></li>
-            <li><a href="{{ URL::to('primesilo/create') }}">Create a PrimeSilo</a>
-        </ul>
-    </nav>
-
-
-    <h1>Create PrimeSilo</h1>
-
-    <hr/>
+        
+        <div class="view__top__overlay"></div>
+   </header>
+   <div class="content wrapper">
 
     {!! Form::open(['url' => 'primesilo']) !!}
     {{ csrf_field() }}
@@ -34,29 +25,24 @@
     </div>
 
     <div class="form-group">
+        {!! Form::label('prime_material', 'Materiaal:') !!}
+        {!! Form::select('prime_material', $materials ) !!}
+    </div>
+
+    <div class="form-group">
         {!! Form::submit('Add PrimeSilo', ['class' => 'btn btn-primary form-control']) !!}
     </div>
 
     {!! Form::close() !!}
 
-    @if ($errors->any())
-        <ul class="alert alert-danger">
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
 
+        @if ($errors->any())
+            <ul class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
 
-
-
-
-    @section('footerscripts')
-
-    @endsection
-
-
-
-</div>
-</body>
-</html>
+    </div>
+@endsection

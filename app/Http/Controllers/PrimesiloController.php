@@ -29,7 +29,9 @@ class PrimesiloController extends Controller
 
     public function create()
     {
-        return View('primesilo.create');
+        $materials = Materialtypes::pluck('material_type_name', 'id');
+
+        return View('primesilo.create')->with(array('materials' => $materials->toArray()));
     }
 
 
@@ -66,7 +68,14 @@ class PrimesiloController extends Controller
         $primesilo->prime_silo_number      = Request::get('prime_silo_number');
         $primesilo->prime_full_percentage      = Request::get('prime_full_percentage');
         $primesilo->material_id    = Request::get('prime_material');
-        $primesilo->save();
+
+        if($primesilo->prime_full_percentage <= 100){
+            $primesilo->save();
+        }else{
+            $primesilo->prime_full_percentage = 100;
+            $primesilo->save();
+        }
+        
         return Redirect('primesilo');
 
 

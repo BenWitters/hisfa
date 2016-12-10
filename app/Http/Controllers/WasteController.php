@@ -24,7 +24,8 @@ class WasteController extends Controller
 
     public function create()
     {
-        return View('waste.create');
+        $materials = Materialtypes::pluck('material_type_name', 'id');
+        return View('waste.create')->with(array('materials' => $materials->toArray()));
     }
 
 

@@ -486,10 +486,36 @@ body
 	background: linear-gradient(to left, #fc00ff , #00dbde); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 	width: 100%;
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 150px;
+	padding-bottom: 185px;
 	color: white;
 	position: relative;
+}
+
+.view__sub__back
+{
+	height: 43px;
+	width: 43px;
+	margin-right: 20px;
+	background-image: url(../img/back.png);
+	background-size: 30px;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	z-index: 9999;
+	float: left;
+	text-indent: -9999px;
+}
+
+.view__sub__breadcrumb
+{
+	font-size: 13px;
+	display: block;
+	margin-left: 63px;
+	color: white;
+	position: relative;
+	z-index: 9999;
+	margin-bottom: 10px;
 }
 
 .view__sub--fixed
@@ -512,6 +538,8 @@ body
 {
 	position: relative;
 	z-index: 999;
+	margin: 0;
+	float: left;
 }
 
 .view__sub__button
