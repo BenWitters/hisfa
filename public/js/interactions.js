@@ -56,8 +56,9 @@ $(document).ready(function() {
 
     // BLOCK TOEVOEGEN
     $(".block__add").on("click", function(e){
-        var form = $(this).closest('form');
-        var counter = $(this).closest('.blocks__row').find('.blocks__row__amount__count');
+        var form = $(this).closest('form'); // the form to submit
+        var otherForm = $(this).closest('.blocks__row').find('.form-blocks-remove'); // the other form (remove block)
+        var counter = $(this).closest('.blocks__row').find('.blocks__row__amount__count'); // the block count
         var id = $(this).attr("data-id");
         console.log(id);
 
@@ -66,13 +67,20 @@ $(document).ready(function() {
             type: 'POST',
             data: $(form).serialize(),
             success: function(result) {
+                // update counter
                 console.log('Success');
                 $(counter).text(+counter.text() + 1);
+
+                // change value in form
                 var inputAmount = $(form).find('[name=amount]');
                 console.log(inputAmount.val());
                 $(inputAmount).val(+inputAmount.val() + 1);
-                console.log(inputAmount.val());
+                console.log('inputamount ' + inputAmount.val());
 
+                // change value in the other form
+                var otherInputAmount = $(otherForm).find('[name=amount]');
+                $(otherInputAmount).val(+otherInputAmount.val() + 1);
+                console.log('otherinputamount ' + otherInputAmount.val())
             },
             error: function (result) {
                 console.log('Error');
@@ -85,6 +93,7 @@ $(document).ready(function() {
     // BLOCK VERWIJDEREN
     $(".block__remove").on("click", function(e){
         var form = $(this).closest('form');
+        var otherForm = $(this).closest('.blocks__row').find('.form-blocks-add');
         var counter = $(this).closest('.blocks__row').find('.blocks__row__amount__count');
         var id = $(this).attr("data-id");
         console.log(id);
@@ -100,7 +109,11 @@ $(document).ready(function() {
                     var inputAmount = $(form).find('[name=amount]');
                     console.log(inputAmount.val());
                     $(inputAmount).val(+inputAmount.val() - 1);
-                    console.log(inputAmount.val());
+                    console.log('inputamount ' + inputAmount.val());
+
+                    var otherInputAmount = $(otherForm).find('[name=amount]');
+                    $(otherInputAmount).val(+otherInputAmount.val() - 1);
+                    console.log('otherinputamount ' + otherInputAmount.val())
                 }
             },
             error: function (result) {

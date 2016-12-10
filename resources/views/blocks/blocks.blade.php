@@ -36,7 +36,7 @@
                     <div class="blocks__row__type" >
                         {{ $block->length }}m
                     </div>
-                    <form action="/blocks/remove" method="post">
+                    <form action="/blocks/remove" method="post" class="form-blocks-remove">
                         {{ csrf_field() }}
                         <input type="text" name="blocktypeId" value="{{$block->blocktype->id}}" hidden>
                         <input type="text" name="length" value="{{$block->length}}" hidden>
@@ -48,7 +48,7 @@
                     <div class="blocks__row__amount">
                         <span class="blocks__row__amount__count">{{ $block->amount }}</span> blokken ({{App\Block::calculateSizePerLength($block->block_type_id, $block->length)}} /m&sup3)
                     </div>
-                    <form action="/blocks/add" method="post">
+                    <form action="/blocks/add" method="post" class="form-blocks-add">
                         {{ csrf_field() }}
                         <input type="text" name="blocktypeId" value="{{$block->blocktype->id}}" hidden>
                         <input type="text" name="length" value="{{$block->length}}" hidden>
