@@ -41,13 +41,12 @@
                         <input type="text" name="blocktypeId" value="{{$block->blocktype->id}}" hidden>
                         <input type="text" name="length" value="{{$block->length}}" hidden>
                         <input type="text" name="amount" value="{{$block->amount}}" hidden>
-                        <button class="block__remove button--block">-</button>
+                        <button class="block__remove button--block" data-id="{{ $block->block_id }}">-</button>
 
                     </form>
 
                     <div class="blocks__row__amount">
-
-                        {{ $block->amount }} blokken ({{App\Block::calculateSizePerLength($block->block_type_id, $block->length)}} /m&sup3)
+                        <span class="blocks__row__amount__count">{{ $block->amount }}</span> blokken ({{App\Block::calculateSizePerLength($block->block_type_id, $block->length)}} /m&sup3)
                     </div>
                     <form action="/blocks/add" method="post">
                         {{ csrf_field() }}
@@ -55,7 +54,7 @@
                         <input type="text" name="length" value="{{$block->length}}" hidden>
                         <input type="text" name="amount" value="{{$block->amount}}" hidden>
 
-                        <button class="block__add button--block">+</button>
+                        <button class="block__add button--block" data-id="{{ $block->block_id }}">+</button>
 
                     </form>
 
