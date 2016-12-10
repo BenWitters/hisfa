@@ -36,8 +36,8 @@
     </div>
 
     <div class="form-group">
-        {!! Form::label('prime_full_material', 'Materiaal:') !!}
-        {!! Form::select('prime_full_material', primes )) !!}
+        {!! Form::label('prime_material', 'Materiaal:') !!}
+        {!! Form::select('prime_material', $materials ) !!}
     </div>
 
     {!! Form::submit('Edit Primesilo', ['class' => 'btn btn-primary form-control']) !!}

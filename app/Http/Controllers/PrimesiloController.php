@@ -7,6 +7,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Input;
 use App\Primesilo;
+use App\Materialtypes;
 
 
 
@@ -51,9 +52,10 @@ class PrimesiloController extends Controller
     public function edit($id)
     {
         $primesilo = primesilo::find($id);
+        $materials = Materialtypes::pluck('material_type_name', 'id');
 
         return View('primesilo.edit')
-            ->with('primesilo', $primesilo);
+            ->with(array("primesilo" => $primesilo, 'materials' => $materials->toArray()));
     }
 
 
@@ -63,6 +65,7 @@ class PrimesiloController extends Controller
         $primesilo = Primesilo::find($id);
         $primesilo->prime_silo_number      = Request::get('prime_silo_number');
         $primesilo->prime_full_percentage      = Request::get('prime_full_percentage');
+        $primesilo->material_id    = Request::get('prime_material');
         $primesilo->save();
         return Redirect('primesilo');
 

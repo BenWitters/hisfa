@@ -7,6 +7,7 @@ use Request;
 use Input;
 
 use App\Http\Requests;
+use App\Materialtypes;
 
 class WasteController extends Controller
 {
@@ -16,7 +17,7 @@ class WasteController extends Controller
         $waste = Waste::all();
 
         // load the view and pass the types
-        return View('silos')
+        return View('silos/silos')
             ->with('waste', $waste);
     }
 
@@ -31,7 +32,7 @@ class WasteController extends Controller
     {
         Waste::create($request->all());
 
-        return redirect('silos');
+        return redirect('silos/silos');
     }
 
     public function show($id)
@@ -45,9 +46,10 @@ class WasteController extends Controller
     public function edit($id)
     {
         $waste = Waste::find($id);
+        $materials = Materialtypes::pluck('material_type_name', 'id');
 
         return View('waste.edit')
-            ->with('waste', $waste);
+            ->with(array("waste" => $waste, 'materials' => $materials->toArray()));
     }
 
 
