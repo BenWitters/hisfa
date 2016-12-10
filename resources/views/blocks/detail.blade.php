@@ -4,7 +4,6 @@
 
     <header class="view__sub blocks">
         <div class="wrapper">
-            
             <span class="view__sub__breadcrumb">Blokken</span>
             <a class="view__sub__back" href="/blocks">BACK</a>
             <h1 class="view__sub__title">Bloktype: {{$blocktype->block_type_name}}</h1>

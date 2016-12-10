@@ -53,18 +53,21 @@
                 
             </div>
 
-            <h2 class="view__subtitle">Blokken: stock</h2>
-            <div class="view__card">
+            <h2 class="view__subtitle">Blokken</h2>
                 
-                @foreach($allBlocks as $type)
-                    <div class="expand-bar">
-                    
-                        <div class="col-type-name">{{ $type->block_type_name }}</div>
-                        <div class="col-amount">{{App\Block::countBlocks($type->id)}} ({{App\Block::calculateSize($type->id)}} /m&sup3;)</div>
-                    </div>
-                @endforeach
+            <div class="blocks">
+                @foreach($allBlocks as $key => $value)
+                
+                    <a class="blocks__type" href="blocks/{{ $value->id }}">
+                        <span class="blocks__type__title">{{ $value->block_type_name }}</span>
+                        <span class="blocks__type__amount">{{App\Block::calculateSize($value->id)}} /m&sup3</span>
+                    </a>
 
+                @endforeach
             </div>
+
+            <a href="/blocks" class="button button--dark">Blokken wijzigen</a>
+
         </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

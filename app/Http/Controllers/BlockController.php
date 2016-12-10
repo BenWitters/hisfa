@@ -50,9 +50,8 @@ class BlockController extends Controller
         $length = $request->input('length');
         $blockTypeId = $request->input('blocktypeId');
         $amount = $request->input('amount');
-        $blockId = $request->input('blockId');
         Block::where([['block_type_id', '=', $blockTypeId], ['length', '=', $length]])->update(array('amount' => $amount+1));
-        return Redirect('blocks/' . $blockId);
+        return Redirect('blocks/' . $blockTypeId);
     }
 
     public function removeBlock(Request $request)
@@ -60,10 +59,9 @@ class BlockController extends Controller
         $length = $request->input('length');
         $blockTypeId = $request->input('blocktypeId');
         $amount = $request->input('amount');
-        $blockId = $request->input('blockId');
         if($amount > 0){
             Block::where([['block_type_id', '=', $blockTypeId], ['length', '=', $length]])->update(array('amount' => $amount-1));
         }
-        return Redirect('blocks/' . $blockId);
+        return Redirect('blocks/' . $blockTypeId);
     }
 }
