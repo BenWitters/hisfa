@@ -406,31 +406,40 @@ body
 
 .block__add{
 	padding: 8px 18px;
-	background: transparent;
-	border: 2px solid white;
-	color: white;
+	color: white !important;
+	border: none;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	transition: all 0.2s ease-in-out;
 	text-decoration: none;
-	margin-top: 1px;
-	height: 95%;
-	margin-right: 3px;
+	height: 62px;
+	width: 62px;
+	background-color: #263238;
+	font-size: 16px;
 }
 
 .block__remove{
-	padding: 4px 20px 10px 20px;
-	background: transparent;
-	border: 2px solid white;
-	color: white;
+	padding: 8px 18px;
+	color: white !important;
+	border: none;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	transition: all 0.2s ease-in-out;
 	text-decoration: none;
-	margin-top: 1px;
-	margin-left: 3px;
-	height: 95%;
+	height: 62px;
+	width: 62px;
+	background-color: #37474F;
+	font-size: 16px;
 }
+
+.button--addlength
+{
+	display: block;
+	width: 350px;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
 
 .block__btn:hover{
 
@@ -554,7 +563,7 @@ body
 
 .content
 {
-	margin-top: 60px;
+	margin-top: 150px;
 }
 
 table
@@ -621,6 +630,22 @@ th
 	position: relative;
 	box-sizing: border-box;
 	text-decoration: none;
+	background-image: url(../img/blocks_bg.png);
+	background-position: right top;
+	background-size: cover;
+	-webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.44);
+	-moz-box-shadow:    0px 0px 30px 0px rgba(0, 0, 0, 0.44);
+	box-shadow:         0px 0px 30px 0px rgba(0, 0, 0, 0.44);
+	transition: all 0.1s ease-in-out;
+	-webkit-transition: all 0.1s ease-in-out;
+}
+
+.blocks__type:hover
+{
+	transform: scale(1.02);
+	-webkit-transform: scale(1.02);
+	transition: all 0.1s ease-in-out;
+	-webkit-transition: all 0.1s ease-in-out;
 }
 
 
@@ -964,6 +989,8 @@ th
 {
 	width: 100%;
 	justify-content: space-between;
+	display: flex;
+	margin-bottom: 20px;
 	background-color: #CFD8DC;
 }
 
