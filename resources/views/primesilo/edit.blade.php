@@ -35,6 +35,11 @@
         {!! Form::text('prime_full_percentage', null, ['class' => 'form-control']) !!}
     </div>
 
+    <div class="form-group">
+        {!! Form::label('prime_full_material', 'Materiaal:') !!}
+        {!! Form::select('prime_full_material', primes )) !!}
+    </div>
+
     {!! Form::submit('Edit Primesilo', ['class' => 'btn btn-primary form-control']) !!}
 
     {!! Form::close() !!}
