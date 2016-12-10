@@ -20,6 +20,15 @@ class BlockController extends Controller
 
         return View('blocks/blocks', $datablock, $datablocktypes);
     }
+
+    public function show($id){
+
+        $blocktypes = Blocktypes::find($id);
+        $blocks = Block::where('block_type_id',$id)->get();
+
+        return View('blocks/detail', array("blocktype" => $blocktypes, "allBlock" => $blocks->toArray()));
+
+    }
     
     
     // add length per type

@@ -604,16 +604,43 @@ th
 .blocks
 {
 	margin-bottom: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .blocks__type
 {
-	width: 100%;
 	background-color: #37474F;
 	color: white;
-	padding: 15px;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	padding-left: 50px;
+	width: 30%;
+	margin-bottom: 3%;
 	position: relative;
 	box-sizing: border-box;
+	text-decoration: none;
+}
+
+
+.blocks__type__title
+{
+	font-size: 30px;
+	font-family: "Lato";
+	letter-spacing: 3px;
+	display: block;
+	text-decoration: none;
+}
+
+.blocks__type__amount
+{
+	font-size: 13px;
+	display: block;
+	margin-top: 15px;
+	opacity: 0.9;
+	letter-spacing: 1.5px;
+	text-decoration: none;
 }
 
 .blocks__type-grey{
@@ -935,7 +962,6 @@ th
 
 .blocks__row
 {
-	display: none;
 	width: 100%;
 	justify-content: space-between;
 	background-color: #CFD8DC;
