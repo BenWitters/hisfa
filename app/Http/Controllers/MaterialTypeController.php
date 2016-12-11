@@ -102,17 +102,17 @@ class MaterialTypeController extends Controller
     }
 
 
-    public function update($id)
+    public function update(Request $request, $id)
     {
         // store
         $materialtypes = Materialtypes::find($id);
-        $materialtypes->material_type_name      = Request::get('material_type_name');
-        $materialtypes->amount = Request::get('amount');
+        $materialtypes->material_type_name      = $request->get('material_type_name');
+        $materialtypes->amount = $request->get('amount');
         $materialtypes->save();
         return Redirect('materialtypes');
 
         $blocktypes = Blocktypes::find($id);
-        $blocktypes->block_type_name      = Request::get('block_type_name');
+        $blocktypes->block_type_name      = $request->get('block_type_name');
         $blocktypes->save();
         return Redirect('blocktypes');
 
