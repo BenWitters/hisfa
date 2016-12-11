@@ -23,7 +23,7 @@
                         <p class="silos-grid__col__id">AFVAL | Silo {{ $value->waste_silo_number  }}</p>
                         <p class="silos-grid__col__percentage">{{ $value->waste_full_percentage}}%</p>
                     </div>
-                    @if($value->waste_full_percentage >= 80)
+                    @if($value->waste_full_percentage >= 90)
                     <div class="silos-grid__col__alert">!</div>
                     @endif
                     <div class="silos-grid__col__fill" style="height: {{ $value->waste_full_percentage}}%"></div>
@@ -37,7 +37,7 @@
                         <p class="silos-grid__col__id">PRIME | Silo {{ $value->prime_silo_number  }}</p>
                         <p class="silos-grid__col__percentage">{{ $value->prime_full_percentage}}%</p>
                     </div>
-                    @if($value->prime_full_percentage >= 80)
+                    @if($value->prime_full_percentage >= 90)
                     <div class="silos-grid__col__alert">!</div>
                     @endif
                     <div class="silos-grid__col__fill" style="height: {{ $value->prime_full_percentage}}%"></div>

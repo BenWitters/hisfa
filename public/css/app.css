@@ -940,13 +940,40 @@ background: linear-gradient(to left, #4776E6 , #8E54E9); /* W3C, IE 10+/ Edge, F
 
 	.view__sub
 	{
-		padding-top: 140px;
-		padding-bottom: 80px;
+		padding-top: 200px;
+		padding-bottom: 140px;
 	}
 
 	.silos-grid .col, .silo
 	{
 		width: 48%;
+	}
+
+	.view__sub__title
+	{
+		font-size: 18px;
+	}
+
+	.blocks__type
+	{
+		width: 100% !important;
+	}
+
+	.blocks__row__amount
+	{
+		font-size: 11px !important;
+	}
+
+	.blocks__row__type
+	{
+		font-size: 11px !important;
+	}
+
+	.add-length .blocks__row__type
+	{
+		padding-left: 20px;
+		padding-right: 20px;
+		width: 100%;
 	}
 
 	.button
@@ -963,7 +990,7 @@ background: linear-gradient(to left, #4776E6 , #8E54E9); /* W3C, IE 10+/ Edge, F
 		z-index: 9999;
 		margin-top: 20px;
 		right: 0;
-		top: 0;
+		top: 50%;
 	}
 
 	.users
@@ -994,6 +1021,11 @@ background: linear-gradient(to left, #4776E6 , #8E54E9); /* W3C, IE 10+/ Edge, F
 		max-width: 90px;
 		text-align: center;
 		width: 63%;
+	}
+
+	.grondstofitem
+	{
+		width: 100% !important;
 	}
 }
 
