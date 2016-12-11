@@ -4,9 +4,9 @@
 
     <header class="view__sub blocks">
         <div class="wrapper">
-            <h1 class="view__sub__title">Grondstof {{ $materialtypes->material_type_name }} wijzigen</h1>
-
-            <a href="{{ URL::to('/materialtypes') }}" class="view__sub__button button">Annuleer</a>
+            <span class="view__sub__breadcrumb">Grondstoffen</span>
+            <a class="view__sub__back" href="/materialtypes">BACK</a>
+            <h1 class="view__sub__title">Grondstof {{ $materialtypes->material_type_name }} | Bewerken</h1>
 
         </div>
 
@@ -17,6 +17,8 @@
         <!-- if there are creation errors, they will show here -->
         {!! HTML::ul($errors->all()) !!}
 
+    <div class="view__card">
+        <h2>Grondstof aanpassen</h2>
         {!! Form::model($materialtypes, array('route' => array('materialtypes.update', $materialtypes->id)))!!}
         <input type="hidden" name="_method" value="put" />
 
@@ -31,16 +33,48 @@
             {!! Form::text('amount', null, ['class' => 'form-control']) !!}
         </div>
 
+
         {!! Form::submit('Aanpassen', ['class' => 'button button--dark']) !!}
 
         {!! Form::close() !!}
 
+    </div>
 
-        <!-- delete -->
+<div class="view__card">
+        <form class="form-horizontal form-container__item" method="POST" action="/materialtypes/{{ $materialtypes->id }}/photo" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        
+            <h2>Foto wijzigen</h2>
+
+            <div class="avatar--profile-page" style="background-image: url(img/grondstoffen/<?php echo $materialtypes->material_type_picture; ?>)"></div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="newMaterialPicture">Material photo</label>
+                <div class="col-md-4">
+                    <input id="materialPicture" name="material_type_picture" type="file"class="form-control" required="" accept="image/*;capture=camera">
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="btnsave"></label>
+                <div class="col-md-4">
+                    <button id="btnsave" name="btnsave" class="button button--dark">Add material photo</button>
+                </div>
+            </div>
+      
+
+    </form>
+      </div>
+      <div class="view__card">
+        <h2>Verwijder grondstof</h2>
+                  <!-- delete -->
         {!! Form::open(array('url' => 'materialtypes/' . $materialtypes->id)) !!}
         {!! Form::hidden('_method', 'DELETE') !!}
         {!! Form::submit('Grondstof verwijderen', array('class' => 'button button--dark')) !!}
         {!! Form::close() !!}
+      </div>
     </div>
 
 @endsection
