@@ -377,6 +377,7 @@ label
 	font-size: 0.9rem;
 	opacity: 0.6;
 	transition: all 0.2s ease-in-out;
+	margin-bottom: 20px;
 }
 
 .textfield:focus
@@ -399,6 +400,15 @@ label
 	font-size: 0.6rem;
 	margin-top: -10px;
 	display: block;
+}
+
+.selectbox
+{
+	-webkit-appearance: none;
+	width: 100%;
+	padding: 20px;
+	display: block;
+	margin-top: 10px;
 }
 
 .button
@@ -438,6 +448,19 @@ label
 	font-size: 16px;
 }
 
+.block__save{
+	padding: 8px 18px;
+	color: white !important;
+	border: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	transition: all 0.2s ease-in-out;
+	text-decoration: none;
+	height: 62px;
+	background-color: #263238;
+	font-size: 16px;
+}
+
 .block__remove{
 	padding: 8px 18px;
 	color: white !important;
@@ -458,6 +481,11 @@ label
 	width: 350px;
 	margin-bottom: 30px;
 	margin-top: 30px;
+}
+
+.add-length form
+{
+	width: 100%;
 }
 
 

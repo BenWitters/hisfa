@@ -35,13 +35,22 @@ class BlockController extends Controller
     public function addLength(Request $request){
         $newLength = $request->input('length');
         $blockTypeId = $request->input('blockTypeId');
-        $blocks = new Block();
+        
+        $blocks = Block::where([['block_type_id', '=', $blockTypeId], ['length', '=', $newLength]])->count();
 
-        $blocks->length = $newLength;
-        $blocks->amount = 0;
-        $blocks->block_type_id = $blockTypeId;
-        $blocks->save();
-        return Redirect('blocks/' . $blockTypeId);
+        if($blocks == 0){
+            $blocks = new Block();
+            $blocks->length = $newLength;
+            $blocks->amount = 0;
+            $blocks->block_type_id = $blockTypeId;
+            $blocks->save();
+            return Redirect('blocks/' . $blockTypeId);
+        }else{
+            $message = "Deze lengthe bestaat al";
+            return Redirect('blocks/' . $blockTypeId)->with($message);
+        }
+
+
 
     }
 

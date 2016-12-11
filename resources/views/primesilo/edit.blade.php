@@ -20,21 +20,21 @@
 
 
         <div class="form-group">
-            {!! Form::label('prime_silo_number', 'Primesilo number:') !!}
-            {!! Form::text('prime_silo_number', null, ['class' => 'form-control']) !!}
+            {!! Form::label('prime_silo_number', 'Nummer') !!}
+            {!! Form::text('prime_silo_number', null, ['class' => 'form-control textfield textfield--dark']) !!}
         </div>
 
         <div class="form-group">
-            {!! Form::label('prime_full_percentage', 'Primesilo percentage:') !!}
-            {!! Form::text('prime_full_percentage', null, ['class' => 'form-control']) !!}
+            {!! Form::label('prime_full_percentage', 'Inhoud (%)') !!}
+            {!! Form::text('prime_full_percentage', null, ['class' => 'form-control textfield textfield--dark']) !!}
         </div>
 
         <div class="form-group">
-            {!! Form::label('prime_material', 'Materiaal:') !!}
-            {!! Form::select('prime_material', $materials ) !!}
+            {!! Form::label('prime_material', 'Materiaal') !!}
+            {!! Form::select('prime_material', $materials , null, ['class' => 'form-control selectbox']) !!}
         </div>
 
-        {!! Form::submit('Edit Primesilo', ['class' => 'btn btn-primary form-control']) !!}
+        {!! Form::submit('Opslaan', ['class' => 'button button--dark']) !!}
 
         {!! Form::close() !!}
     </div>

@@ -24,17 +24,17 @@
 
 
         <div class="form-group">
-            {!! Form::label('material_type_name', 'Materialtype:') !!}
-            {!! Form::text('material_type_name', null, ['class' => 'form-control']) !!}
+            {!! Form::label('material_type_name', 'Type') !!}
+            {!! Form::text('material_type_name', null, ['class' => 'form-control textfield textfield--dark']) !!}
         </div>
 
         <div class="form-group">
-            {!! Form::label('amount', 'Amount:') !!}
-            {!! Form::text('amount', null, ['class' => 'form-control']) !!}
+            {!! Form::label('amount', 'Hoeveelheid') !!}
+            {!! Form::text('amount', null, ['class' => 'form-control textfield textfield--dark']) !!}
         </div>
 
 
-        {!! Form::submit('Aanpassen', ['class' => 'button button--dark']) !!}
+        {!! Form::submit('Wijzig', ['class' => 'button button--dark']) !!}
 
         {!! Form::close() !!}
 
@@ -46,11 +46,9 @@
         
             <h2>Foto wijzigen</h2>
 
-            <div class="avatar--profile-page" style="background-image: url(img/grondstoffen/<?php echo $materialtypes->material_type_picture; ?>)"></div>
-
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="newMaterialPicture">Material photo</label>
+                <label class="col-md-4 control-label" for="newMaterialPicture">Foto</label>
                 <div class="col-md-4">
                     <input id="materialPicture" name="material_type_picture" type="file"class="form-control" required="" accept="image/*;capture=camera">
                 </div>
@@ -60,21 +58,21 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="btnsave"></label>
                 <div class="col-md-4">
-                    <button id="btnsave" name="btnsave" class="button button--dark">Add material photo</button>
+                    <button id="btnsave" name="btnsave" class="button button--dark">Wijzig</button>
                 </div>
             </div>
       
 
     </form>
       </div>
-      <div class="view__card">
+<!--       <div class="view__card">
         <h2>Verwijder grondstof</h2>
-                  <!-- delete -->
+   
         {!! Form::open(array('url' => 'materialtypes/' . $materialtypes->id)) !!}
         {!! Form::hidden('_method', 'DELETE') !!}
-        {!! Form::submit('Grondstof verwijderen', array('class' => 'button button--dark')) !!}
+        {!! Form::submit('Grondstof verwijderen', array('class' => 'button button--dark button--danger')) !!}
         {!! Form::close() !!}
-      </div>
+      </div> -->
     </div>
 
 @endsection
