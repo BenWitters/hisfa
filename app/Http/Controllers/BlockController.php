@@ -20,19 +20,37 @@ class BlockController extends Controller
 
         return View('blocks/blocks', $datablock, $datablocktypes);
     }
+
+    public function show($id){
+
+        $blocktypes = Blocktypes::find($id);
+        $blocks = Block::where('block_type_id',$id)->get();
+
+        return View('blocks/detail', array("blocktype" => $blocktypes, "allBlock" => $blocks->toArray()));
+
+    }
     
     
     // add length per type
     public function addLength(Request $request){
         $newLength = $request->input('length');
         $blockTypeId = $request->input('blockTypeId');
-        $blocks = new Block();
+        
+        $blocks = Block::where([['block_type_id', '=', $blockTypeId], ['length', '=', $newLength]])->count();
 
-        $blocks->length = $newLength;
-        $blocks->amount = 0;
-        $blocks->block_type_id = $blockTypeId;
-        $blocks->save();
-        return Redirect('blocks');
+        if($blocks == 0){
+            $blocks = new Block();
+            $blocks->length = $newLength;
+            $blocks->amount = 0;
+            $blocks->block_type_id = $blockTypeId;
+            $blocks->save();
+            return Redirect('blocks/' . $blockTypeId);
+        }else{
+            $message = "Deze lengthe bestaat al";
+            return Redirect('blocks/' . $blockTypeId)->with($message);
+        }
+
+
 
     }
 
@@ -42,10 +60,13 @@ class BlockController extends Controller
         $blockTypeId = $request->input('blocktypeId');
         $amount = $request->input('amount');
         Block::where([['block_type_id', '=', $blockTypeId], ['length', '=', $length]])->update(array('amount' => $amount+1));
-        //return Redirect('blocks');
+
         return response()->json([
             'status' => 'success'
         ]);
+
+        return Redirect('blocks/' . $blockTypeId);
+
     }
 
     /*public function addBlock($id)
@@ -66,6 +87,6 @@ class BlockController extends Controller
         if($amount > 0){
             Block::where([['block_type_id', '=', $blockTypeId], ['length', '=', $length]])->update(array('amount' => $amount-1));
         }
-        return Redirect('blocks');
+        return Redirect('blocks/' . $blockTypeId);
     }
 }

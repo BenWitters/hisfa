@@ -16,5 +16,7 @@ class SilosController extends Controller
         return View('silos/silos', $dataprime, $datawaste);
     }
 
+    
+
 
 }

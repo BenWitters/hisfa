@@ -14,19 +14,20 @@
         <h2>Primesilo's</h2>
         <div class="grid silos-grid">
             
-                <div class="col" v-for="prime in primes">
+                <a v-bind:href="'primesilo/' + prime.prime_silo_number + '/edit'" class="col" v-for="prime in primes">
                     <div class="wrapper">
                         <p class="silos-grid__col__id">Silo @{{ prime.prime_silo_number  }}</p>
                         <p class="silos-grid__col__percentage">@{{ prime.prime_full_percentage}}%</p>
+   
                     </div>
                     <div class="silos-grid__col__alert" v-if="prime.prime_full_percentage >= 90">!</div>
-
                     <div class="silos-grid__col__fill" v-bind:style="{height: prime.prime_full_percentage + '%'}"></div>
 
-                </div>
+                </a>
 
 
         </div>
+
         <a href="{{ URL::to('primesilo/create') }}" class="button button--dark">Primesilo toevoegen</a>
 
         @endif
@@ -35,14 +36,14 @@
         <h2>Afvalsilo's</h2>
         <div class="grid silos-grid">
             
-                <div class="col" v-for="waste in wastes">
+                <a v-bind:href="'waste/' + waste.waste_silo_number + '/edit'" class="col" v-for="waste in wastes">
                     <div class="wrapper">
                         <p class="silos-grid__col__id">Silo @{{ waste.waste_silo_number  }}</p>
                         <p class="silos-grid__col__percentage">@{{ waste.waste_full_percentage}}%</p>
                     </div>
                     <div class="silos-grid__col__alert" v-if="waste.waste_full_percentage >= 90">!</div>
                     <div class="silos-grid__col__fill" v-bind:style="{height: waste.waste_full_percentage + '%'}"></div>
-                </div>
+                </a>
                 
     
 
@@ -72,6 +73,7 @@
                         // success callback
                         // primes gelijk stellen aan de body van de ajax call -> data
                         this.primes = response.body;
+
                 }, (response) => {
                         // error callback
                         console.log("not");

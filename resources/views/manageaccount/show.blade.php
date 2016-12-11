@@ -2,9 +2,11 @@
 
 @section('content')
         <header class="view__sub users">
-            <div class="wrapper">
-                <h1 class="view__sub__title">Accountinstellingen</h1>
-            </div>
+        <div class="wrapper">
+            <span class="view__sub__breadcrumb">Gebruikers</span>
+            <a class="view__sub__back" href="/manageaccounts">BACK</a>
+            <h1 class="view__sub__title">Accountinstellingen: {{$user->name}}</h1>
+        </div>
             
             <div class="view__top__overlay"></div>
         </header>
@@ -120,7 +122,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="singlebutton"></label>
                 <div class="col-md-4">
-                    <button class="button button--dark">Bewaar account instellingen</button>
+                    <button class="button button--dark">Opslaan</button>
                 </div>
             </div>
 

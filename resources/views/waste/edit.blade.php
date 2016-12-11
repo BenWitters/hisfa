@@ -1,39 +1,41 @@
-<html>
-<head>
-    <title>Edit waste silo</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@extends('layouts.app')
 
-    <nav class="navbar navbar-inverse">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="{{ URL::to('waste') }}">Waste Silo</a>
+@section('content')
+    <header class="view__sub silos" >
+        <div class="wrapper">
+            <span class="view__sub__breadcrumb">Silo's</span>
+            <a class="view__sub__back" href="/silos">BACK</a>
+            <h1 class="view__sub__title">Afvalsilo {!! $waste->waste_silo_number !!} | Bewerken</h1>
         </div>
-        <ul class="nav navbar-nav">
-            <li><a href="{{ URL::to('waste') }}">View All The Waste Silo</a></li>
-            <li><a href="{{ URL::to('waste/create') }}">Create a Waste Silo</a>
-        </ul>
-    </nav>
+        
+        <div class="view__top__overlay"></div>
+   </header>
+   <div class="content wrapper">
 
-    <h1>Edit {!! $waste->waste_silo_number !!}</h1>
+        <!-- if there are creation errors, they will show here -->
+        {!! HTML::ul($errors->all()) !!}
 
-    <!-- if there are creation errors, they will show here -->
-    {!! HTML::ul($errors->all()) !!}
-
-    {!! Form::model($waste, array('route' => array('waste.update', $waste->id)))!!}
-    <input type="hidden" name="_method" value="put" />
+        {!! Form::model($waste, array('route' => array('waste.update', $waste->id)))!!}
+        <input type="hidden" name="_method" value="put" />
 
 
-    <div class="form-group">
-        {!! Form::label('waste_silo_number', 'Waste Silo:') !!}
-        {!! Form::text('waste_silo_number', null, ['class' => 'form-control']) !!}
+        <div class="form-group">
+            {!! Form::label('waste_silo_number', 'waste number:') !!}
+            {!! Form::text('waste_silo_number', null, ['class' => 'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('waste_full_percentage', 'wastesilo percentage:') !!}
+            {!! Form::text('waste_full_percentage', null, ['class' => 'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('waste_material', 'Materiaal:') !!}
+            {!! Form::select('waste_material', $materials ) !!}
+        </div>
+
+        {!! Form::submit('Edit wastesilo', ['class' => 'btn btn-primary form-control']) !!}
+
+        {!! Form::close() !!}
     </div>
-
-    {!! Form::submit('Edit Waste Silo', ['class' => 'btn btn-primary form-control']) !!}
-
-    {!! Form::close() !!}
-
-</div>
-</body>
-</html>
+@endsection

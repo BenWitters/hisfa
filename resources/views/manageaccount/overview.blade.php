@@ -20,7 +20,7 @@
 		<tr>
 			<th>Naam</th>
 			<th>E-mail</th>
-			<th>Admin</th>
+			<th>Rol</th>
 			<th></th>
 		</tr>
 
@@ -34,9 +34,13 @@
 	       			{{$user->email}}
 	       		</td>
 	       		<td>
-	       			{{$user->is_admin}}
+	       			@if($user->is_admin == 1)
+						Beheerder
+	       			@else
+						Gebruiker
+	       			@endif
 	       		</td>
-	       		<td><a href="manageaccounts/{{$user->id}}">Bewerken</a></td>
+	       		<td><a href="manageaccounts/{{$user->id}}">Rechten</a></td>
 				
 			</tr>
 	   @endforeach
