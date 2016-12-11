@@ -17,6 +17,7 @@ class Materialtypes extends Model
 
     public function primesilo()
  	{
-       return $this->hasMany('App\Primesilo')->onDelete('cascade');
+ 		
+       return $this->hasMany('App\Primesilo');
     }
 }
