@@ -59,11 +59,11 @@ $(document).ready(function() {
         var form = $(this).closest('form'); // the form to submit
         var otherForm = $(this).closest('.blocks__row').find('.form-blocks-remove'); // the other form (remove block)
         var counter = $(this).closest('.blocks__row').find('.blocks__row__amount__count'); // the block count
-        var id = $(this).attr("data-id");
+        var id = $(form).find('[name=blocktypeId]').val();
         console.log(id);
 
         $.ajax({
-            url: "blocks/add",
+            url: "/blocks/add",
             type: 'POST',
             data: $(form).serialize(),
             success: function(result) {
@@ -95,11 +95,11 @@ $(document).ready(function() {
         var form = $(this).closest('form');
         var otherForm = $(this).closest('.blocks__row').find('.form-blocks-add');
         var counter = $(this).closest('.blocks__row').find('.blocks__row__amount__count');
-        var id = $(this).attr("data-id");
+        var id = $(form).find('[name=blocktypeId]').val();
         console.log(id);
 
         $.ajax({
-            url: "blocks/remove",
+            url: "/blocks/remove",
             type: 'POST',
             data: $(form).serialize(),
             success: function(result) {

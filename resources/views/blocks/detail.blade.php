@@ -24,14 +24,10 @@
                     </div>
 
                     <div class="blocks__row__amount">
-						@if( $block["amount"] == 1)
-							{{ $block["amount"] }} blok ({{App\Block::calculateSizePerLength($block["block_type_id"], $block["length"])}} /m&sup3)
-						@else
-							{{ $block["amount"] }} blokken ({{App\Block::calculateSizePerLength($block["block_type_id"], $block["length"])}} /m&sup3)
-						@endif
+						<span class="blocks__row__amount__count">{{ $block["amount"] }}</span> blok(ken) ({{App\Block::calculateSizePerLength($block["block_type_id"], $block["length"])}} /m&sup3)
                         
                     </div>
-                    <form action="/blocks/remove" method="post">
+                    <form action="/blocks/remove" method="post" class="form-blocks-remove">
                         {{ csrf_field() }}
                         <input type="text" name="blockId" value="{{$block["block_id"] }}" hidden>
                         <input type="text" name="blocktypeId" value="{{$blocktype->id}}" hidden>
