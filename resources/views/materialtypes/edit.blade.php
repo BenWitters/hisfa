@@ -63,7 +63,14 @@
             </div>
       
 
-    </form>
+        </form>
+
+        <!-- Delete image -->
+        {!! Form::open(array('url' => '/materialtypes/'.$materialtypes->id.'/photo', 'class' => 'form-horizontal form-container__item' )) !!}
+        <h2>Foto verwijderen</h2>
+        {!! Form::hidden('_method', 'DELETE') !!}
+        {!! Form::submit('Foto verwijderen', array('class' => 'button button--dark button--danger')) !!}
+        {!! Form::close() !!}
       </div>
 <!--       <div class="view__card">
         <h2>Verwijder grondstof</h2>
