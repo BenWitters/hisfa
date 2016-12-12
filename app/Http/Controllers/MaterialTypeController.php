@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Input;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use App\Materialtypes;
 use Illuminate\Http\Request;
@@ -82,6 +83,16 @@ class MaterialTypeController extends Controller
         $materialtypes = Materialtypes::find($id);
         return View('materialtypes.photo')
             ->with('materialtypes', $materialtypes);
+    }
+
+    public function deletePhoto($id)
+    {
+        $materialtype = Materialtypes::find($id);
+        //Storage::delete('/img/grondstoffen/'.$materialtype->material_type_picture);
+        $materialtype->material_type_picture = "hisfa.JPG";
+        $materialtype->save();
+
+        return redirect('/materialtypes');
     }
 
 
