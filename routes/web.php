@@ -68,6 +68,7 @@ Route::resource('primesilo', 'PrimesiloController');
 
 Route:: get('materialtypes/{id}/photo', 'MaterialTypeController@photo');
 Route:: post('materialtypes/{id}/photo', 'MaterialTypeController@addPhoto');
+Route::delete('materialtypes/{id}/photo', 'MaterialTypeController@deletePhoto');
 
 
 //octabins
