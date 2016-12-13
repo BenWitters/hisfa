@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Waste;
 use Request;
 use Input;
@@ -60,6 +61,28 @@ class WasteController extends Controller
         $waste = Waste::find($id);
         $waste->waste_silo_number      = Request::get('waste_silo_number');
         $waste->save();
+
+        /*
+        // waste silos
+        $users = User::all();
+        foreach ($users as $user){
+            // see if a user wants to receive waste silo notifications
+            if($user->get_notifications_waste == 1){
+                // get all waste silos
+                $wastes = Waste::all();
+                foreach ($wastes as $waste){
+                    // see if a silo is 90% full or more
+                    if($waste->waste_full_percentage >= 90){
+                        // notify user, waste silo data meesturen om weer te geven in mail
+                        $user->notify(new WasteFull($waste));
+
+                    }
+                }
+            }
+
+        }
+        */
+
         return Redirect('waste');
     }
 

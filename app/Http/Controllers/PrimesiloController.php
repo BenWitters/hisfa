@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
@@ -75,6 +76,28 @@ class PrimesiloController extends Controller
             $primesilo->prime_full_percentage = 100;
             $primesilo->save();
         }
+
+        
+        /*
+        // get all users
+        $users = User::all();
+        foreach ($users as $user){
+            // see if a user wants to receive prime silo notifications
+            if($user->get_notifications_prime == 1){
+                // get all prime silos
+                $primes = Primesilo::all();
+                foreach ($primes as $prime){
+                    // see if a silo is 90% full or more
+                    if($prime->prime_full_percentage >= 90){
+                        // notify user, prime silo data meesturen om weer te geven in mail
+                        $user->notify(new PrimeFull($prime));
+
+                    }
+                }
+            }
+
+        }
+        */
         
         return Redirect('primesilo');
 

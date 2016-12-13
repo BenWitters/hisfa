@@ -33,48 +33,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-    
-
-       
         
-        // get all users
-        $users = User::all();
-        foreach ($users as $user){
-            // see if a user wants to receive prime silo notifications
-            if($user->get_notifications_prime == 1){
-                // get all prime silos
-                $primes = Primesilo::all();
-                foreach ($primes as $prime){
-                    // see if a silo is 90% full or more
-                    if($prime->prime_full_percentage >= 90){
-                        // notify user, prime silo data meesturen om weer te geven in mail
-                        $user->notify(new PrimeFull($prime));
-
-                    }
-                }
-            }
-
-        }
-
-        // waste silos
-
-        $users = User::all();
-        foreach ($users as $user){
-            // see if a user wants to receive waste silo notifications
-            if($user->get_notifications_waste == 1){
-                // get all waste silos
-                $wastes = Waste::all();
-                foreach ($wastes as $waste){
-                    // see if a silo is 90% full or more
-                    if($waste->waste_full_percentage >= 90){
-                        // notify user, waste silo data meesturen om weer te geven in mail
-                        $user->notify(new WasteFull($waste));
-
-                    }
-                }
-            }
-
-        }
 
         $waste = \App\Waste::all(); // select * from wastesilos
         $allWaste = $waste;
