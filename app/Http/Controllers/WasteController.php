@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\WasteFull;
 use App\User;
 use App\Waste;
 use Request;
@@ -62,7 +63,7 @@ class WasteController extends Controller
         $waste->waste_silo_number      = Request::get('waste_silo_number');
         $waste->save();
 
-        /*
+
         // waste silos
         $users = User::all();
         foreach ($users as $user){
@@ -81,7 +82,7 @@ class WasteController extends Controller
             }
 
         }
-        */
+
 
         return Redirect('waste');
     }

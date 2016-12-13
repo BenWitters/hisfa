@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\PrimeFull;
 use App\User;
 use Request;
 use App\Http\Requests;
@@ -78,7 +79,7 @@ class PrimesiloController extends Controller
         }
 
         
-        /*
+
         // get all users
         $users = User::all();
         foreach ($users as $user){
@@ -97,7 +98,7 @@ class PrimesiloController extends Controller
             }
 
         }
-        */
+
         
         return Redirect('primesilo');
 
