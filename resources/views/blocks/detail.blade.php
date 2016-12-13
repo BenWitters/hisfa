@@ -55,7 +55,7 @@
     	<form action="/blocks/addLength" method="post" class="blocks__row add-length">
     		 {{ csrf_field() }}
 	    	<div class="blocks__row__type" >
-	        	<input type="text" name="length" pattern="[0-9]+([\.][0-9]+)?" title="Vul hier enkel cijfers in, bij het invoeren van kommagetallen, maak gebruik van een . om cijfers te scheiden.">
+	        	<input type="text" name="length" pattern="[0-9]+([\.][0-9]+)?" required title="Vul hier enkel cijfers in, bij het invoeren van kommagetallen, maak gebruik van een . om cijfers te scheiden.">
 	        	<input value="{{ $blocktype->id }}" id="blockTypeId" name="blockTypeId" type="hidden" class="form-control input-md" required="">
 	        </div>
 
