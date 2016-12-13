@@ -65,8 +65,6 @@ class BlockController extends Controller
             'status' => 'success'
         ]);
 
-        return Redirect('blocks/' . $blockTypeId);
-
     }
 
     /*public function addBlock($id)
