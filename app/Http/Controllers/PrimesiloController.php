@@ -50,7 +50,7 @@ class PrimesiloController extends Controller
 
     public function edit($id)
     {
-        $primesilo = primesilo::find($id);
+        $primesilo = Primesilo::find($id);
 
         return View('primesilo.edit')
             ->with('primesilo', $primesilo);
