@@ -17,18 +17,18 @@ class CreateLogTable extends Migration
             $table->increments('id');
             $table->timestamps();
 
-            $table->block_type_name();
-            $table->length();
-            $table->amount();
+            $table->string('block_type_name');
+            $table->double('length');
+            $table->integer('amount');
 
-            $table->material_type_name();
-            $table->amount_material();
+            $table->string('material_type_name');
+            $table->integer('amount_material');
 
-            $table->prime_silo_number();
-            $table->prime_full_percentage();
+            $table->integer('prime_silo_number');
+            $table->integer('prime_full_percentage');
 
-            $table->waste_silo_number();
-            $table->waste_full_precentage();
+            $table->integer('waste_silo_number');
+            $table->integer('waste_full_precentage');
 
         });
     }

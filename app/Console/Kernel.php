@@ -6,6 +6,8 @@ use App\Block;
 use App\Blocktypes;
 use App\Materials;
 use App\Materialtypes;
+use App\Primesilo;
+use App\Waste;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -31,17 +33,17 @@ class Kernel extends ConsoleKernel
 //        $schedule->command('inspire')
 //                 ->hourly();
 
-        $schedule->command('inspire')
-            ->dailyAt('23:00');
-        $schedule->call(function() {
-            $blocktypes = Blocktypes::all();
-            $blocks = Block::all();
-            $materials = Materials::all();
-            $materialtypes = Materialtypes::all();
-            $primesilo = Primesilo::all();
-            $waste = Waste::all();
-
-        });
+//        $schedule->command('inspire')
+//            ->dailyAt('23:00');
+//        $schedule->call(function() {
+//            $blocktypes = Blocktypes::all();
+//            $blocks = Block::all();
+//            $materials = Materials::all();
+//            $materialtypes = Materialtypes::all();
+//            $primesilo = Primesilo::all();
+//            $waste = Waste::all();
+//
+//        });
     }
 
     /**
