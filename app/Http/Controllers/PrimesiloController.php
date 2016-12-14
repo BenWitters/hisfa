@@ -55,8 +55,10 @@ class PrimesiloController extends Controller
 
     public function edit($id)
     {
-        $primesilo = primesilo::find($id);
+        
         $materials = Materialtypes::pluck('material_type_name', 'id');
+        $primesilo = Primesilo::find($id);
+
 
         return View('primesilo.edit')
             ->with(array("primesilo" => $primesilo, 'materials' => $materials->toArray()));
