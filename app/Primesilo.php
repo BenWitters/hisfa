@@ -12,7 +12,7 @@ class Primesilo extends Model
     protected $fillable = [
         'prime_silo_number',
         'prime_full_percentage',
-        'prime_material',
+        'material_id',
     ];
 
     public function material()

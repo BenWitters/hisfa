@@ -30,8 +30,8 @@
         </div>
 
         <div class="form-group">
-            {!! Form::label('prime_material', 'Materiaal') !!}
-            {!! Form::select('prime_material', $materials , null, ['class' => 'form-control selectbox']) !!}
+            {!! Form::label('material_id', 'Materiaal') !!}
+            {!! Form::select('material_id', $materials , null, ['class' => 'form-control selectbox']) !!}
         </div>
 
         {!! Form::submit('Opslaan', ['class' => 'button button--dark']) !!}

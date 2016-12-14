@@ -11,5 +11,8 @@ class PrimeSiloController extends Controller
 {
     public function index(){
         return \App\Primesilo::with('material')->get();
+         // return \App\Primesilo::all();
     }
 }
+
+?>

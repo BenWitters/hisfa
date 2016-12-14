@@ -20,21 +20,16 @@
 
 
         <div class="form-group">
-            {!! Form::label('waste_silo_number', 'waste number:') !!}
-            {!! Form::text('waste_silo_number', null, ['class' => 'form-control']) !!}
+            {!! Form::label('waste_silo_number', 'Nummer') !!}
+            {!! Form::text('waste_silo_number', null, ['class' => 'form-control textfield textfield--dark']) !!}
         </div>
 
         <div class="form-group">
-            {!! Form::label('waste_full_percentage', 'wastesilo percentage:') !!}
-            {!! Form::text('waste_full_percentage', null, ['class' => 'form-control']) !!}
+            {!! Form::label('waste_full_percentage', 'Hoeveelheid') !!}
+            {!! Form::text('waste_full_percentage', null, ['class' => 'form-control textfield textfield--dark']) !!}
         </div>
 
-        <div class="form-group">
-            {!! Form::label('waste_material', 'Materiaal:') !!}
-            {!! Form::select('waste_material', $materials ) !!}
-        </div>
-
-        {!! Form::submit('Edit wastesilo', ['class' => 'btn btn-primary form-control']) !!}
+        {!! Form::submit('Opslaan', ['class' => 'btn btn-primary form-control button button--dark']) !!}
 
         {!! Form::close() !!}
     </div>

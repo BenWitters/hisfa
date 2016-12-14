@@ -15,22 +15,22 @@
     {!! Form::open(['url' => 'primesilo']) !!}
     {{ csrf_field() }}
     <div class="form-group">
-        {!! Form::label('prime_silo_number', 'Silo Number:') !!}
-        {!! Form::text('prime_silo_number', null, ['class' => 'form-control']) !!}
+        {!! Form::label('prime_silo_number', 'Nummer') !!}
+        {!! Form::text('prime_silo_number', null, ['class' => 'form-control textfield textfield--dark']) !!}
     </div>
 
     <div class="form-group">
-        {!! Form::label('prime_full_percentage', 'Full percentage:') !!}
-        {!! Form::text('prime_full_percentage', 0, ['class' => 'form-control']) !!}
+        {!! Form::label('prime_full_percentage', 'Inhoud (%)') !!}
+        {!! Form::text('prime_full_percentage', 0, ['class' => 'form-control textfield textfield--dark']) !!}
     </div>
 
     <div class="form-group">
-        {!! Form::label('prime_material', 'Materiaal:') !!}
-        {!! Form::select('prime_material', $materials ) !!}
+        {!! Form::label('material_id', 'Materiaal:') !!}
+        {!! Form::select('material_id', $materials , 0, ['class' => 'selectbox']) !!}
     </div>
 
     <div class="form-group">
-        {!! Form::submit('Add PrimeSilo', ['class' => 'btn btn-primary form-control']) !!}
+        {!! Form::submit('Toevoegen', ['class' => 'button button--dark form-control']) !!}
     </div>
 
     {!! Form::close() !!}

@@ -15,22 +15,17 @@
     {!! Form::open(['url' => 'waste']) !!}
     {{ csrf_field() }}
     <div class="form-group">
-        {!! Form::label('waste_silo_number', 'Silo Number:') !!}
-        {!! Form::text('waste_silo_number', null, ['class' => 'form-control']) !!}
+        {!! Form::label('waste_silo_number', 'Nummer') !!}
+        {!! Form::text('waste_silo_number', null, ['class' => 'form-control textfield textfield--dark']) !!}
     </div>
 
     <div class="form-group">
-        {!! Form::label('waste_full_percentage', 'Full percentage:') !!}
-        {!! Form::text('waste_full_percentage', 0, ['class' => 'form-control']) !!}
+        {!! Form::label('waste_full_percentage', 'Inhoud (%)') !!}
+        {!! Form::text('waste_full_percentage', 0, ['class' => 'form-control textfield textfield--dark']) !!}
     </div>
 
     <div class="form-group">
-        {!! Form::label('waste_material', 'Materiaal:') !!}
-        {!! Form::select('waste_material', $materials ) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::submit('Add wasteSilo', ['class' => 'btn btn-primary form-control']) !!}
+        {!! Form::submit('Toevoegen', ['class' => 'button button--dark form-control']) !!}
     </div>
 
     {!! Form::close() !!}

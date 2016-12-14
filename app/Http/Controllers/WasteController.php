@@ -49,10 +49,9 @@ class WasteController extends Controller
     public function edit($id)
     {
         $waste = Waste::find($id);
-        $materials = Materialtypes::pluck('material_type_name', 'id');
 
         return View('waste.edit')
-            ->with(array("waste" => $waste, 'materials' => $materials->toArray()));
+            ->with(array("waste" => $waste));
     }
 
 
@@ -60,9 +59,15 @@ class WasteController extends Controller
     {
         // store
         $waste = Waste::find($id);
-        $waste->waste_silo_number      = Request::get('waste_silo_number');
-        $waste->save();
+        $waste->waste_silo_number = Request::get('waste_silo_number');
+        $waste->waste_full_percentage = Request::get('waste_full_percentage');
 
+        if($waste->waste_full_percentage <= 100){
+            $waste->save();
+        }else{
+            $waste->waste_full_percentage = 100;
+            $waste->save();
+        }
 
         // waste silos
         $users = User::all();
@@ -84,7 +89,7 @@ class WasteController extends Controller
         }
 
 
-        return Redirect('waste');
+        return Redirect('silos');
     }
 
     public function destroy($id)
@@ -93,7 +98,7 @@ class WasteController extends Controller
             $waste->delete();
 
             // redirect
-            return Redirect('waste');
+            return Redirect('silos');
     }
 
 //    public function index(){

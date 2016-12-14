@@ -14,7 +14,7 @@
         <h2>Primesilo's</h2>
         <div class="grid silos-grid">
             
-                <a v-bind:href="'primesilo/' + prime.prime_silo_number + '/edit'" class="col" v-for="prime in primes">
+                <a v-bind:href="'primesilo/' + prime.id + '/edit'" class="col" v-for="prime in primes">
                     <div class="wrapper">
                         <p class="silos-grid__col__id">Silo @{{ prime.prime_silo_number  }}</p>
                         <p class="silos-grid__col__percentage">@{{ prime.prime_full_percentage}}%</p>
@@ -36,7 +36,7 @@
         <h2>Afvalsilo's</h2>
         <div class="grid silos-grid">
             
-                <a v-bind:href="'waste/' + waste.waste_silo_number + '/edit'" class="col" v-for="waste in wastes">
+                <a v-bind:href="'waste/' + waste.id + '/edit'" class="col" v-for="waste in wastes">
                     <div class="wrapper">
                         <p class="silos-grid__col__id">Silo @{{ waste.waste_silo_number  }}</p>
                         <p class="silos-grid__col__percentage">@{{ waste.waste_full_percentage}}%</p>
@@ -50,8 +50,8 @@
         </div>
         <a href="{{ URL::to('waste/create') }}" class="button button--dark">Afvalsilo toevoegen</a>
         @endif
-
-    <script src="https://unpkg.com/vue@2.0.5/dist/vue.js"></script>
+</div>
+    <script src="https://unpkg.com/vue@2.0.5/dist/vue.min.js"></script>
     <script src="https://unpkg.com/vue-resource@1.0.3/dist/vue-resource.min.js"></script>
     <script>
         var app = new Vue({
@@ -72,6 +72,7 @@
                     this.$http.get('/api/v1/primesilos').then((response) => {
                         // success callback
                         // primes gelijk stellen aan de body van de ajax call -> data
+                        console.log(response.body);
                         this.primes = response.body;
 
                 }, (response) => {

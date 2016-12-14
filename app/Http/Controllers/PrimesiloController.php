@@ -42,7 +42,7 @@ class PrimesiloController extends Controller
     {
         // vraagt alles -> enkel welke fillable zijn (in model)
         Primesilo::create($request->all());
-        return redirect('silos/silos');
+        return redirect('silos');
     }
 
     public function show($id)
@@ -69,7 +69,7 @@ class PrimesiloController extends Controller
         $primesilo = Primesilo::find($id);
         $primesilo->prime_silo_number      = Request::get('prime_silo_number');
         $primesilo->prime_full_percentage      = Request::get('prime_full_percentage');
-        $primesilo->material_id    = Request::get('prime_material');
+        $primesilo->material_id    = Request::get('material_id');
 
         if($primesilo->prime_full_percentage <= 100){
             $primesilo->save();
