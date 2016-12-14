@@ -176,6 +176,15 @@ body
 	padding-bottom:  100px;
 }
 
+.container--full
+{
+	width:  100vw;
+	margin-left:  0px;
+	height:  auto;
+	min-height: 100vh;
+	padding-bottom:  0px;
+}
+
 .wrapper
 {
 	width:  80%;

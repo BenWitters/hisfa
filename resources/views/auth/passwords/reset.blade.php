@@ -1,7 +1,14 @@
-@extends('layouts.app')
 
-@section('content')
 <div class="container">
+ <header class="view__sub silos" >
+        <div class="wrapper">
+            <span class="view__sub__breadcrumb">Silo's</span>
+            <a class="view__sub__back" href="/silos">BACK</a>
+            <h1 class="view__sub__title">Primesilo {!! $primesilo->prime_silo_number !!} | Bewerken</h1>
+        </div>
+        
+        <div class="view__top__overlay"></div>
+   </header>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -67,4 +74,4 @@
         </div>
     </div>
 </div>
-@endsection
+
